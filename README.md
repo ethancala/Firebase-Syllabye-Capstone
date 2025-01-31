@@ -77,5 +77,4 @@ syllabye/
 ├── index.html # Main application file
 └──  README.md # You're reading it!
 
----
 
