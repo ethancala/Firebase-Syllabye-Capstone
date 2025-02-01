@@ -1,6 +1,6 @@
 # Syllabye - Senior Capstone Project
 
-![Syllabye Logo](assets/images/Syllabye-White-White.png) <!-- Add your logo here if available -->
+![Syllabye Logo](public/images/Syllabye-White-White.png) <!-- Add your logo here if available -->
 
 Welcome to **Syllabye**, the ultimate solution for professors and students to streamline, simplify, and succeed in syllabus management! This project is the culmination of our senior capstone journey, where we’ve combined innovation, technology, and a dash of creativity to revolutionize how syllabi are created, edited, and shared.
 
