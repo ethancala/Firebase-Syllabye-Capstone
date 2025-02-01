@@ -1,0 +1,70 @@
+/* Navbar container */
+.navbar {
+    background: #940731;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Logo Styling */
+.logo {
+    color: white;
+    padding-left: 10px;
+    font-family: 'Alegreya SC';
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Menu styling */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-menu li {
+    padding: 0 15px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hamburger menu */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        padding: 20px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}

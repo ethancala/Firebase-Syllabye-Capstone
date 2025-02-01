@@ -1,0 +1,99 @@
+/* Drawer Navigation */
+.drawer-right {
+    position: fixed;
+    right: -340px; /* Hidden by default */
+    top: 0;
+    bottom: 0;
+    background: #940731;
+    width: 340px;
+    padding: 20px;
+    z-index: 999;
+    transition: right 0.3s ease-in-out; /* Smooth slide effect */
+}
+
+.drawer-right.open {
+    right: 0; /* Slide in when active */
+}
+
+.drawer-right h2 {
+    color: white;
+}
+
+/* Close Button */
+.cross {
+    text-align: right;
+}
+
+.cross .toggleDrawer {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Ensure navigation is a vertical list */
+.nav-stacked {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;  /* Stack items vertically */
+    gap: 10px;  /* Add spacing between items */
+}
+
+.nav-stacked li {
+    margin: 10px 50px 20px 0;
+}
+
+.nav-stacked li {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensures full width */
+}
+
+.nav-stacked li a i {
+    margin-right: 10px;
+}
+
+.nav-stacked li a:hover {
+    color: #00c3ff;
+}
+
+/* Social Icons */
+.social {
+    margin-top: 40px;
+}
+
+.social ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.social ul li a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social ul li a:hover {
+    color: #00eeff;
+}
+
+/* Drawer Toggle Button */
+.toggleDrawerIcon {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+}
+
+.toggleDrawerIcon button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}

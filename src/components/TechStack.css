@@ -1,0 +1,70 @@
+/* Ensure the entire section stays properly aligned */
+#tech-stack {
+  padding: 60px 0;
+  background-color: #f4f4f4;
+  text-align: center;
+  overflow: hidden; /* Prevents overflow */
+}
+  
+/* Aligns Tech Stack title to the left & GitHub button to the right */
+.block-headge {
+    display: flex;
+    justify-content: space-between;  /* Push items apart */
+    align-items: center;
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 20px;  /* Slight indent for balance */
+}
+
+/* Moves GitHub button to the right */
+.block-headge .github-button {
+    margin-left: auto;
+}
+
+/* Force Tech Stack title to stay left */
+.block-headge h1 {
+    flex: 1;
+    text-align: left;  /* Align text to the left */
+    margin: 0;
+}
+/* Prevent icon overflow & spacing issues */
+.slider-container {
+  max-width: 85%;
+  margin: auto;
+  overflow: hidden;
+}
+  
+/* Fix alignment of slides */
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+  
+/* Set consistent image sizes */
+.slick-slide img {
+  width: 100px !important;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+  
+  .slick-prev, .slick-next {
+    font-size: 24px;
+    z-index: 1000;
+    color: #333;
+  }
+  
+  .slick-prev:hover, .slick-next:hover {
+    color: #007bff;
+  }
+  
+  .slick-dots {
+    bottom: -30px;
+  }
+  

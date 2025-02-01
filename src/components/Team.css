@@ -1,0 +1,62 @@
+/* Centered team section */
+#testimonials {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+
+/* Ensure the slider stays within bounds */
+.slider-container {
+    max-width: 85%;
+    margin: auto;
+}
+
+/* Team member container */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+/* Ensuring all images are the same size */
+.testimonial > img {
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Ensures proper aspect ratio and cropping */
+    border-radius: 50%; /* Makes it a circle */
+    margin-bottom: 15px;
+    border: 5px solid #800020; /* Maroon border */
+}
+
+/* Team member description */
+.testimonial {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.testimonial:hover {
+    transform: scale(1.05);
+}
+
+/* Slick carousel arrows styling */
+.slick-prev, .slick-next {
+    font-size: 24px;
+    color: #800020;
+    z-index: 10;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    color: black;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .testimonial > img {
+        width: 120px;
+        height: 120px;
+    }
+}
