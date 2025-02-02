@@ -16,7 +16,7 @@ const App = () => {
 
       <div className="main-content">
         <Routes> 
-          <Route path="/Syllabye-Capstone" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/browse" element={<Browse />} />
