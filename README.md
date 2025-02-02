@@ -51,6 +51,11 @@ Here’s what powers Syllabye:
 
 Ready to dive into **Syllabye**? Follow these steps to get the project up and running on your local machine.
 
+git clone <https://github.com/ChairForce-1-0/Syllabye-Capstone.git>
+cd Syllabye-Capstone
+npm install
+npm run dev
+
 ### **Prerequisites**
 
 Before you begin, make sure you have the following installed:
@@ -67,14 +72,18 @@ Here’s a quick overview of the project structure:
 syllabye/
 
    ```bash
-├── assets/ # Static files (images, CSS, JS)
-│ ├── css/ # Stylesheets
-│ ├── js/ # JavaScript files
-│ └── images/ # Project images and logos
-├── views/ # HTML templates
-├── routes/ # Backend routes
-├── models/ # Database models
-├── index.html # Main application file
-└──  README.md # You're reading it!
+syllabye-app/
+│── public/                 # Static assets (images, favicons)
+│   ├── images/             # Logos and background images
+│── src/                    # Main source code
+│   ├── assets/             # CSS and global styles
+│   ├── components/         # Reusable React components
+│   ├── pages/              # Page-specific components
+│   ├── App.jsx             # Main app component
+│   ├── main.jsx            # React entry point
+│── index.html              # Root HTML file
+│── package.json            # Project dependencies & scripts
+│── vite.config.js          # Vite configuration
+│── README.md               # Project documentation
 
 

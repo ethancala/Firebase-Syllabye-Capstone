@@ -12,7 +12,7 @@ const Header = () => {
       <div className="header-wrapper-inner">
         {/* Logo Centered */}
         <section className="center">
-          <img src="/images/Syllabye-White-White.png" className="logo-image" alt="Syllabye Logo" />
+          <img src="public/images/Syllabye-White-White.png" className="logo-image" alt="Syllabye Logo" />
           <div className="slogan">STREAMLINE. SIMPLIFY.</div>
           <div className="secondary-slogan">SUCCEED.</div>
         </section>
@@ -20,12 +20,12 @@ const Header = () => {
         {/* Scroll Down Arrow */}
         <section className="bottom">
           <a id="scrollToContent" href="#">
-            <img src="/images/arrow_down.png" alt="Scroll Down" />
+            <img src="public/images/arrow_down.png" alt="Scroll Down" />
           </a>
         </section>
       </div>
     </header>
   );
-};
+}; 
 
 export default Header;

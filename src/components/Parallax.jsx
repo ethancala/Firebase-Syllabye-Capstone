@@ -1,10 +1,21 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./Parallax.css"; // Ensure styles are imported
+import studentBooks from "/public/images/student-books.jpg"; // ✅ Import the image
 
 const Parallax = () => {
   return (
-    <section id="parallax" className="content-block parallax">
+
+    <section
+      id="parallax"
+      className="content-block parallax"
+      style={{
+        backgroundImage: `url(${studentBooks})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <div className="container text-center">
         <h1>
           Dynamic Syllabus Customization. Student-Friendly Features.

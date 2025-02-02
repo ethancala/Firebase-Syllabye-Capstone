@@ -6,17 +6,17 @@ import "slick-carousel/slick/slick-theme.css";
 import "./TechStack.css"; // Ensure styles are imported
 
 const techLogos = [
-  { src: "/images/vs.png", alt: "Visual Studio" },
-  { src: "/images/vscode.png", alt: "VS Code" },
-  { src: "/images/css.png", alt: "CSS3" },
-  { src: "/images/html.png", alt: "HTML5" },
-  { src: "/images/js.png", alt: "JavaScript" },
-  { src: "/images/bootstrap.png", alt: "Bootstrap" },
-  { src: "/images/nodejs.png", alt: "Node.js" },
-  { src: "/images/react.png", alt: "React" },
-  { src: "/images/github.png", alt: "GitHub" },
-  { src: "/images/git.png", alt: "Git" },
-  { src: "/images/firebase.png", alt: "Firebase" },
+  { src: "public/images/vs.png", alt: "Visual Studio" },
+  { src: "public/images/vscode.png", alt: "VS Code" },
+  { src: "public/images/css.png", alt: "CSS3" },
+  { src: "public/images/html.png", alt: "HTML5" },
+  { src: "public/images/js.png", alt: "JavaScript" },
+  { src: "public/images/bootstrap.png", alt: "Bootstrap" },
+  { src: "public/images/nodejs.png", alt: "Node.js" },
+  { src: "public/images/react.png", alt: "React" },
+  { src: "public/images/github.png", alt: "GitHub" },
+  { src: "public/images/git.png", alt: "Git" },
+  { src: "public/images/firebase.png", alt: "Firebase" },
 ];
 
 const TechStack = () => {
@@ -51,7 +51,7 @@ const TechStack = () => {
     ],
   };
   
-
+ 
 
     return (
         <section id="tech-stack" className="content-block">
@@ -61,7 +61,6 @@ const TechStack = () => {
                     <a href="https://github.com/your-github-repo" className="btn btn-o btn-lg github-button">
                         GitHub Repo
                     </a>
-
                 </header>
 
                 <strong><p className="tech-subtitle">
