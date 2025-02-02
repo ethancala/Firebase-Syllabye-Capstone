@@ -4,7 +4,7 @@ import "./WhyUse.css"; // Ensure styles are imported
 
 const reasons = [
   {
-    imgSrc: "public/images/student-frustrated.jpg",
+    imgSrc: "/images/student-frustrated.jpg",
     title: "Reason",
     description: "I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?",
   },
@@ -14,7 +14,7 @@ const reasons = [
     description: "The more of me you take, the more you leave behind. What am I?",
   },
   {
-    imgSrc: "public/images/laptop-board.jpg",
+    imgSrc: "/images/laptop-board.jpg",
     title: "More Reasons",
     description: "I’m not alive, but I can grow. I don’t have lungs, but I need air. I don’t have a mouth, but water kills me. What am I?",
   },

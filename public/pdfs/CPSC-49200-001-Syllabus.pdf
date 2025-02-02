@@ -1,0 +1,168 @@
+Lewis University	
+
+Software Systems Capstone
+CPSC-49200-001
+Syllabus
+Spring 2025
+I.	Instructor Information
+Instructor’s Name:	Eric Pogue
+Office Hours:	Monday and Wednesday noon to 1:50 pm CST by appointment
+Lewis Office Location:	AS-124-A
+Appointments:	Appointments can be requested via email
+Lewis Email:	epogue@lewisu.edu
+Lewis Phone Number:	(815) 836-5015
+II.	Course Information
+Course:	Software Systems Capstone (cpsc-49200-001)
+Credit Hours:	3
+Description:	
+In this course, students will participate, as part of a team, in the design, implementation and testing of a medium-to-large software project. Additionally, this course will cover topics in professional ethics, intellectual properties, privacy and professional communication.
+Prerequisites:	CPSC-44000 Software Engineering
+Course Meeting Times:	M 2-2:50 pm
+Course Meeting Dates:	Monday, January 20th through Friday, May 16th
+Meeting Location:	Arts and Sciences (AS) 140S
+Course Final:	Tuesday, December 10 from 10:30 am to 12:30 pm CT
+Student Learning Outcomes:
+Conduct a review of software code for a software project
+Write a software component that performs non-trivial tasks and is resilient to input and run-time errors
+Identify the biases within software that runs within our institutions
+Articulate the political ramifications of software that is used within our local and global communities
+Collaborate in a team setting, in helping to develop a high-grade software product
+Work with professional software development tools
+Effectively document their role in the creation of a software product
+Explain privacy and regulation issues relating to developing and using software
+Explain the different kinds of software licenses and how they define and protect intellectual property
+Provide examples of the role of ethics in code, and in how people use code
+Apply code management skills within a team
+Appropriately to share code within a repository
+Apply software engineering concepts to a software work
+Effectively present their product as a team
+Document the usage of the product so partners can understand how to implement the product within their business/community
+Write clear, concise and accurate technical documents following well defined standards
+Program student learning outcomes:
+develop programs using languages having different programming paradigms and for a variety of platforms
+select the most appropriate data structures and algorithms for the given problem
+explain how programming languages are designed and implemented
+Work in a team to design and implement complex data processing systems collaboratively.
+Baccalaureate Characteristics:
+Essential Skills
+Major Approaches to Knowledge
+Critical Thinking
+Lifelong Learning
+III.	University Mission Statement
+Lewis University, guided by its Catholic and Lasallian heritage, provides a diverse student population programs for a liberal and professional education grounded in the interaction of knowledge and fidelity in the search for truth.
+
+Lewis promotes the development of the complete person through the pursuit of wisdom and justice. Fundamental to its Mission is a spirit of association, which fosters community in all teaching, learning and service.
+
+How this course connects to the University Mission:
+This course will allow us to extend our knowledge in software development, provide us the foundation for lifelong learning in this domain, and provide us the opportunity to assist each other on our learning journey.
+
+IV.	Course Materials
+Textbook: Various readings from O’Reilly Books which is available free to you through Lewis University.
+
+Supplemental readings, videos, online materials: Links and references to additional readings, videos, and online materials will also be provided.
+
+Hardware and software requirements: This course requires access to multiple software tools. There are generally available for free but will need to be installed and utilized from a Windows or Macintosh computer.
+
+Other required materials or costs: During this course we will be setting up and utilizing GitHub and Microsoft Azure accounts. We will be able to complete course assignments utilizing these resources for free or low cost (less than $20). You will need a credit card to sign up for the accounts.
+
+V.	Instructional Methods and Activities
+Modality of Instruction:This course will be a face-to-face in-person synchronous class with blended learning elements.
+
+VI.	Course Schedule
+The course is broken into 8 modules.
+
+Module	Topics	Assignments
+1	Team Assignments, Agile Software Development, and Product Development / Support	Discussion, Quiz, Lab, and Reflection
+2	Celebration of Scholarship, Scrum, Configuration Management, and Product Development / Support	Discussion, Quiz, Lab, and Reflection
+3	Successor Team Recruiting, Testing, Demos, and Product Development / Support	Discussion, Quiz, Lab, and Reflection
+4	Successor Team Coaching, Defect / Issue Tracking, and Product Development / Support	Discussion, Midterm Exam, Lab, and Reflection
+5	Successor Team Integration, Usability Testing, and Product Development / Support	Discussion, Quiz, Lab, and Reflection
+6	Metrics, Continuous Improvement, Sustainability, and Product Development / Support	Discussion, Quiz, Lab, and Reflection
+7	Continuous Improvement, Sustainability, Product Transition, and Product Development / Support	Discussion, Final Exam, Lab, Reflection, and Lab Demo
+8	Class Product Presentation and Validate Product Transition	Class Project Presentation
+Schedule Changes: Material changes to the course schedule will be communicated through course lecture and/or Blackboard announcements.
+
+VII.	Grading Criteria and Course Policies
+Assignments and Course Requirements: Assignments for this course will take the form of Labs, Quizzes, Exams, Discussion Boards, a Lab Demonstration, and a Class Project Presentation.
+
+Course Grade: The course grade will be based on the following.
+
+Assignment	Points	#	Total Points	% of Grade
+Discussion	8	7	56	6%
+Quiz	20	5	100	10%
+Exam (Midterm / Final)	80	2	160	16%
+Lab	80	7	560	56%
+Reflection	4	7	28	3%
+Lab Demo	16	1	16	2%
+Class Project Presentation	80	1	80	8%
+Totals		30	1000	100%
+Grading Policies: No late assignments will be accepted. It is vastly preferable to submit a partially complete assignment on time than to turn in a late assignment.
+
+Similarly, it is vastly better to turn in a lab (programming) assignment that has 70% of the features fully implemented than to turn in a lab assignment that has all of the features 70% implemented.
+
+Final course letter grade will be determined using the following scale:
+
+Final course letter grade will be determined by using the following scale:
+A
+A-
+B+
+B
+B-
+C+
+C
+C-	93-100%
+90-92.9%
+87-89.9%
+83-86.9%
+80-82.9%
+77-79.9%
+73-76.9%
+70-72.9	D+
+D
+D-
+F	67-69.9
+63-66.9
+60-62.9%
+0-59.9%	
+Course Policies: Class attendance is required unless otherwise specified. During our class time we will remain focused on the topics at hand, avoid utilizing phones or email, and be inclusive of our fellow classmates.
+
+Changes to Course Assignments or Grades: Changes to the course assignments or grades will be communicated through course lecture and/or Blackboard announcements
+
+VIII.	Academic Information for Students
+Requests for Reasonable Accommodations: Lewis University is committed to providing equal access and opportunity for participation in all programs, services and activities. If you are a student with a disability who would like to request a reasonable accommodation, please speak with the Learning Access Coordinator at the Center for Academic Success and Enrichment (CASE). Please make an appointment by calling 815-836-5593 or emailing learningaccess@lewisu.edu. Since accommodations require early planning and are not provided retroactively, it is recommended that you make your request prior to or during the first week of class. It is not necessary to disclose the nature of your disability to your instructor. For more information about academic support services, visit the website at: www.lewisu.edu/CASE.
+
+Lewis University has adopted Blackboard Ally providing alternative formats for files uploaded by instructors. Students can click the down arrow next to any file, and select Alternative Formats.
+
+Academic Integrity: Scholastic integrity lies at the heart of Lewis University. Plagiarism, collusion and other forms of cheating or scholastic dishonesty are incompatible with the principles of the University. Students engaging in such activities are subject to loss of credit and expulsion from the University. Cases involving academic dishonesty are initially considered and determined at the instructor level. If the student is not satisfied with the instructor’s explanation, the student may appeal at the department/program level. Appeal of the department /program decision must be made to the Dean of the college/school. The Dean reviews the appeal and makes the final decision in all cases except those in which suspension or expulsion is recommended, and in these cases the Provost makes the final decision.
+
+Coursera Career Academy:Students at Lewis University have open access to industry-recognized courses and certificates from leading employer. Through this collaboration, our students have access to over 50 certification programs developed in collaboration with industry leaders, including Microsoft, Google, Meta, and IBM. The certifications are an opportunity to supplement your current curricula and learn additional job-relevant skills that today’s top employers are looking for. Click on this link for more information and to start your Coursera Career Academy journey.
+
+Responsiveness to Change:Lewis University will be guided by our Lasallian mission and the well-being of our community of students, faculty, and staff in respond and adapting to any sudden changes or circumstances. Based on the guidance of the State of Illinois and the Centers for Disease Control, it may be necessary to require adherence to new to health and safety protocols and/or make changes to the planned modality this course. Except in the case of unforeseen circumstances that require a university-wide shift in instructional modalities, courses will only be offered in the modality listed in the course schedule. It is not possible to accommodate remote attendance in on-campus classes unless the course is listed as hyflex in the schedule.
+
+Online and Hybrid Learning:Online and blended courses at Lewis University enable students to enroll in courses in which part or all of the course is delivered at a distance. All courses that contain online instruction require that students participate in regular and substantive interactive learning experiences on at least a weekly basis. Faculty teaching online and blended courses will clearly state expectations for interactivity as well as faculty engagement with students and timelines for feedback and grading on assignments.
+
+IX.	Student Health, Wellness, and Community Standards
+Sanctified Zone: Guided by its Catholic and Lasallian heritage, Lewis University is firmly committed to fostering a campus atmosphere that is permeated by its Mission values of Fidelity, Wisdom, Knowledge, Justice, and Association. Accordingly, we have declared the University campus to be a Sanctified Zone, a place and a people United in Diversity. The active promotion of diversity and the opposition to all forms of prejudice and bias are a powerful and healing expression of our desire to be Signs of Faith (Signum Fidei) to each other. To learn more about the Sanctified Zone, please visit: http://www.lewisu.edu/sanctified zone
+
+As a Sanctified Zone, Lewis University affirms the importance of diverse spiritual and value-based identities, worldviews, and expressions, including the observance of religious and cultural traditions. To learn more about the rich diversity of spiritual and cultural holidays celebrated within the Lewis community, please see the Interfaith Calendar. Please note that this calendar is not a designation of spiritual and cultural holidays officially recognized or observed by Lewis University; rather, it is intended as an educational resource for the Lewis community.
+
+Lewis University is committed to inclusion “together and by association” on our campus and in our classrooms. At the beginning of the semester, you should carefully review this course syllabus and requirements. If you have religious or cultural observances that reasonably conflict with attendance or submission of assignments in this class, please let the instructor know as soon as possible so that alternative arrangements may be discussed at the instructor’s discretion.
+
+Violence Prevention Students at Lewis University are entitled to personal safety. Our Catholic and Lasallian tradition views every person as created in the image of God, full of dignity and worth. All community members are expected to behave in a way that respects others' rights to control their sexual behavior and bodily integrity. The University takes seriously any incidents of sexual misconduct — including but not limited to sexual harassment, non-consensual sexual intercourse, non-consensual sexual contact and sexual exploitation. To learn more about our comprehensive Sexual Misconduct Policy, find out how to report an incident, or access on and off campus resources, please visit the LU Cares website at www.lewisu.edu/LUCares.
+
+Mandatory Reporting As an instructor, I have a required reporting responsibility as a part of my role. Lewis University policy requires me to share certain information brought to my attention about potential sexual misconduct with the Title IX Coordinator. I will seek to keep the information you share private to the greatest extent possible. Information will only be shared with those that need to know to ensure the University can respond, take appropriate measures, and provide resources.
+
+A list of confidential (those not required to report to the Title IX office) on and off-campus resources can be found on the LU Cares website: www.lewisu.edu/LUCares. For those who may have experienced sexual violence, harassment, dating violence, or stalking, there are no-cost resources available to provide assistance. This support also extends to the individuals' associates. The timeframe in which the violence occurred is not a factor in accessing these resources.
+
+Student Wellness CenterAll Lewis students are eligible and encouraged to use the services offered to support overall well-being and student success. The Student Wellness Center is located on the lower level of Mother Teresa Hall on the Romeoville campus. For more information about all Center offerings or to access on campus, in-person services, visit https://www.lewisu.edu/StudentWellnessCenter or call (815)836-5455.
+
+Timely Care All students have access to a 24/7, 365 days per year telehealth services through a partnership with TimelyCare (medical, counseling, health coaching, self-care resources/peer community and urgent care). To access services, go to www.timelycare.com/lewisu, use your Lewis University email to log in or download the TimelyCare app. TalkNow and Medical Now on-demand services are available any time of day, either by phone or video. TimelyCare staff are trained to work with any level of concern and will connect students with the Student Wellness Center for additional assistance and follow-up as appropriate.
+
+If a student is at imminent risk or there is a serious safety concern, please call 911 or Lewis University Police Department 815-836-5911. Lewis community members are encouraged to complete the Assessment and Care Team Person of Concern Form and the Dean of Students Office will ensure follow-up support as well as other campus resources if helpful and needed.
+
+X.	Additional Policy and Resources
+University Student Complaint Policy: The University Student Complaint Policy can be found at lewisu.edu/studentcomplaints.
+
+University Grade Appeal Policy: The University Grade Appeal Policy can be found at lewisuedu/studentcomplaints.
+
+University Copyright and Intellectual Property Guidelines: The University Copyright and Intellectual Property Guidelines can be found at https://www.lewisu.edu/osp/pdf/Intellectual%20Property%20Rights%20Policy.pd
