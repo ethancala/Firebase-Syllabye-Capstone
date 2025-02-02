@@ -5,10 +5,10 @@ Chair Force One
 
 ## Team Members & Roles  
 
-**[Nick Krzysiak] | Scrum Master | Facilitates meetings, removes roadblocks, ensures Scrum adherence |
-**[Irving Sanchez] | Product Owner | Defines product vision, maintains backlog, prioritizes features |
-**[Jaiden Leonard] | Developer | Implements features, collaborates on technical tasks |
-**[Bryan Avalos] | Developer | Implements features, collaborates on technical tasks |
+- **[Nick Krzysiak] | Scrum Master | Facilitates meetings, removes roadblocks, ensures Scrum adherence |
+- **[Irving Sanchez] | Product Owner | Defines product vision, maintains backlog, prioritizes features |
+- **[Jaiden Leonard] | Developer | Implements features, collaborates on technical tasks |
+- **[Bryan Avalos] | Developer | Implements features, collaborates on technical tasks |
 
 ## Communication & Collaboration  
 - **Primary Communication Channel:** [Discord]  
