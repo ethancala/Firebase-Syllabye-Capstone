@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a href="#home" className="logo">SYLLABYE</a>
+        <a href="/" className="logo">SYLLABYE</a>
 
         {/* Hamburger menu for mobile */}
         <div className="menu-icon" onClick={toggleMenu}>
