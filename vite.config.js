@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/syllabye-capstone/", // Match GitHub repo name
+  base: "/Syllabye-Capstone/", // Match GitHub repo name
 });
