@@ -9,7 +9,7 @@ const reasons = [
     description: "I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?",
   },
   {
-    imgSrc: "/images/lightbulbs.jpeg",
+    imgSrc: "public/images/lightbulbs.jpeg",
     title: "Some other Reason",
     description: "The more of me you take, the more you leave behind. What am I?",
   },
@@ -46,3 +46,4 @@ const WhyUse = () => {
 };
 
 export default WhyUse;
+

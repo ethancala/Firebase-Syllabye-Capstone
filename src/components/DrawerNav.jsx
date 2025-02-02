@@ -29,7 +29,7 @@ const DrawerNav = () => {
         <h2>Navigate</h2>
         <nav>
           <ul className="nav nav-pills nav-stacked">
-            <li><Link to="/" onClick={toggleDrawer}><i className="fa fa-home"></i> <span>Home</span></Link></li>
+            <li><Link to="/Syllabye-Capstone" onClick={toggleDrawer}><i className="fa fa-home"></i> <span>Home</span></Link></li>
             <li><Link to="/about" onClick={toggleDrawer}><i className="fa fa-bookmark"></i> <span>About</span></Link></li>
             <li><Link to="/login" onClick={toggleDrawer}><i className="fa fa-tasks"></i> <span>Login</span></Link></li>
             <li><Link to="/create" onClick={toggleDrawer}><i className="fa fa-gear"></i> <span>Create</span></Link></li>

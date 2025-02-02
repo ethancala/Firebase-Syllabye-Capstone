@@ -1,56 +1,62 @@
-/* Services Section Styling */
+/* Ensure content block has the correct background settings */
 .content-block {
-    background: transparent no-repeat center center fixed;
-    background-size: cover;
-    overflow: hidden;
-    padding: 60px 0;
-  }
-  
-  /* Parallax Effect */
+  background: transparent no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+/* Parallax Effect */
+.parallax {
+  min-height: 15vh; /* Ensures full height for effect */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
   .parallax {
-    padding: 80px 0;
+    background-attachment: scroll; /* Fix for mobile */
   }
-  
-  #services {
-    background-image: url("/images/typewriter.jpeg");
-    color: white;
-    padding-top: 20px;
-    margin-top: -50px; /* Pull the section up */
 }
 
-  
-/* Ensure the title is centered */
-.block-head {
-    text-align: center !important;  /* Force centering */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+/* Services Section */
+#services {
+  background-image: url("/images/typewriter.jpeg"); /* Corrected Path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white; /* Ensures text is visible */
+  text-align: center;
+  padding: 80px 0;
 }
 
+/* Center Title */
+.block-heading {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 
-  
-  .block-body {
-    margin-top: 60px;
-  }
-  
-  /* Service Items */
-  .service {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .service:hover {
-    transform: scale(1.05);
-  }
-  
-  /* FontAwesome Icons */
-  .service i {
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 15px;
-  }
-  
+/* Service Items */
+.service {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+  transform: scale(1.05);
+}
+
+/* FontAwesome Icons */
+.service i {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 15px;
+}
