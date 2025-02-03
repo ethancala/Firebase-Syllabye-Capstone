@@ -7,7 +7,7 @@ Chair Force One
 
 - Nick Krzysiak | Scrum Master | Facilitates meetings, removes roadblocks, ensures Scrum adherence |
 - Irving Sanchez | Product Owner | Defines product vision, maintains backlog, prioritizes features |
-- Jaiden Leonard | Developer | Implements features, collaborates on technical tasks |
+- Jaiden Leonard | Developer | Implements database features, collaborates on technical tasks |
 - Bryan Avalos | Developer | Implements features, collaborates on technical tasks |
 
 ## Communication & Collaboration  
