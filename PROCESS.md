@@ -21,5 +21,4 @@
 - **Sprint & Product Backlogs:** Backlogs are used to assess if stories are completed or not. They are also utilized to to assign stories to team members.
 
 ## Change Management  
-  
-
+- **Main & Production Branches:** Changes to the repository/code will initially be pushed to the main branch for testing and when verified, will be pushed to the production branch.
