@@ -24,7 +24,7 @@ const teamMembers = [
     imgSrc: "/images/jaiden.png",
     name: "Jaiden Leonard",
     description:
-      "Jaiden is a junior majoring in Computer science with a focus on software engineering and development. He enjoys playing videogames and working on cars",
+      "Jaiden is a senior majoring in Computer science with a focus on software engineering and development. He enjoys playing videogames and working on cars.",
     title: "jaidentleonard@lewisu.edu",
   },
   {
