@@ -5,18 +5,18 @@ import "./WhyUse.css"; // Ensure styles are imported
 const reasons = [
   {
     imgSrc: "/images/student-frustrated.jpg",
-    title: "Reason",
-    description: "I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?",
+    title: "Upload Syllabi",
+    description: "Upload syllabi you may have already created so students can review their course.",
   },
   {
     imgSrc: "/images/lightbulbs.jpeg",
-    title: "Some other Reason",
-    description: "The more of me you take, the more you leave behind. What am I?",
+    title: "Create New Syllabi",
+    description: "Professors can make their own syllabi so that students can learn and succeed in their classes.",
   },
   {
     imgSrc: "/images/laptop-board.jpg",
-    title: "More Reasons",
-    description: "I’m not alive, but I can grow. I don’t have lungs, but I need air. I don’t have a mouth, but water kills me. What am I?",
+    title: "View & Download Syllabi",
+    description: "Students can not only see their syllabi, but they can also download them for later use.",
   },
 ];
 
