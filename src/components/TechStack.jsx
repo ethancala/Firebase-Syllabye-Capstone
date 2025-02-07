@@ -14,6 +14,7 @@ const techLogos = [
   { src: "/images/bootstrap.png", alt: "Bootstrap" },
   { src: "/images/nodejs.png", alt: "Node.js" },
   { src: "/images/react.png", alt: "React" },
+  { src: "/images/vite.png", alt: "MongoDB" },
   { src: "/images/github.png", alt: "GitHub" },
   { src: "/images/git.png", alt: "Git" },
   { src: "/images/firebase.png", alt: "Firebase" },
