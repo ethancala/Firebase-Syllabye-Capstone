@@ -31,6 +31,10 @@ We’re a team of passionate developers and problem-solvers from Lewis Universit
 | **Jaiden Leonard**  | Security Wizard               | Turns security into reality.        |
 | **Bryan Avalos**    | Frontend Magician             | Knows every framework ever created. |
 
+Refer to the links below for more info. 
+- [TEAM.md](./TEAM.md) - Team members, roles, and communication  
+- [PROCESS.md](./PROCESS.md) - Scrum process, events, and workflows  
+
 ---
 
 ## 🛠️ **Tech Stack**

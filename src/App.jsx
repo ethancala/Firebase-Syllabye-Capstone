@@ -1,24 +1,33 @@
+import { Routes, Route } from "react-router-dom"; 
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import TechStack from "./components/TechStack";
-import Services from "./components/Services";
-import WhyUse from "./components/WhyUse";
-import Parallax from "./components/Parallax";
-import Team from "./components/Team";
-import Footer from "./components/Footer"; // Import Footer
+import DrawerNav from "./components/DrawerNav"; // Import DrawerNav
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Browse from "./pages/Browse";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />  {/* Navbar at the top */}
-      <Header />
-      <TechStack />
-      <Services />
-      <WhyUse />
-      <Parallax />
-      <Team />
-      <Footer /> {/* Add Footer at the bottom */}
-    </div>
+    <>
+      <Navbar /> {/* Navbar is always visible */}
+      <DrawerNav /> {/* DrawerNav is always visible */}
+
+      <div className="main-content">
+        <Routes> 
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/browse" element={<Browse />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+
+      <Footer /> {/* Footer is always visible */}
+    </>
   );
 };
 

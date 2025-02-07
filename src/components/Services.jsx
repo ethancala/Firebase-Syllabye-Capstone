@@ -6,18 +6,18 @@ import typewriter from "/images/typewriter.jpeg"; // Import from public folder
 const servicesData = [
     {
         icon: "fa-laptop",
-        title: "Stuff We Do 1",
-        description: "The flibberjab was in full swing, and the snorklewhack had just begun. Everyone in the village gathered around the bumblefluff tree, where the annual zizzlepop festival was taking place. The mayor, a rather eccentric womblydoodle, stood on a quibberknack and declared, 'Let the fizzlewump commence!'",
+        title: "Boostrap in React",
+        description: "We use the React front-end framework alongside Bootstrap to build a responsive and dynamic user interface.",
     },
     {
         icon: "fa-cogs",
-        title: "Stuff We Do 2",
-        description: "Meanwhile, in the nearby snargleblast forest, a group of jibberjangle enthusiasts were busy practicing their wobblefritz routines. They claimed it was the key to unlocking the secrets of the zorpalicious universe, though most people just thought they were making it up.",
+        title: "Google Firebase",
+        description: "Firebase provides authentication, cloud storage, and a real-time database, ensuring that each user has a personalized and secure experience with their own SyllaBye.",
     },
     {
         icon: "fa-pencil-square",
-        title: "Stuff We Do 3",
-        description: "The quizzlewhomp orchestra started playing, and the crowd erupted into a spontaneous gigglesnort dance. It was a night to remember, filled with blorpadoo and snarglewhiff magic. And as the clock struck zizzlepop, everyone agreed it was the silliest, most wonderful day of the year.",
+        title: "Node.js",
+        description: "We use Node.js for its fast, scalable server-side capabilities, allowing us to handle real-time data processing and ensure smooth, efficient performance for our application.",
     },
 ];
 

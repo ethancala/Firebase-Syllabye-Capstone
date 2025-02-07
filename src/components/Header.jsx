@@ -20,7 +20,7 @@ const Header = () => {
         {/* Scroll Down Arrow */}
         <section className="bottom">
           <a id="scrollToContent" href="#">
-            <img src="public/images/arrow_down.png" alt="Scroll Down" />
+            <img src="/images/arrow_down.png" alt="Scroll Down" />
           </a>
         </section>
       </div>

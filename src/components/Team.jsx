@@ -7,31 +7,32 @@ import "./Team.css"; // Ensure styles are imported
 
 const teamMembers = [
   {
-    imgSrc: "public/images/anon.png",
+    imgSrc: "/images/irving.png",
+    name: "Irving Sanchez",
     description:
-      "Are you an expert at lounging? Do you have a PhD in Pillow Fluffing? We’re looking for a dedicated individual to test the comfort level of couches worldwide.",
-    title: "Lives in Mom's Basement",
+      "Irving is a senior pursuing a major in computer science with a minor in math and thereafter pursuing his masters in computer engineering. On his free time he enjoys playing with with his dogs groot and peter, reading comic books and invites anybody to play a game of chess or magic the gathering with him. ",
+    title: "IrvingFSanchez@lewisu.edu",
   },
   {
-    imgSrc: "public/images/hacker.png",
-    name: "Dude 2",
+    imgSrc: "/images/nick.png",
+    name: "Nick Krzysiak",
     description:
-      "Do you have a passion for snacks? Can you tell the difference between a stale chip and a perfectly crispy one? We need you to ensure the quality of all snacks in our office.",
-    title: "Owns Gold Mines on Mercury",
+      "Nick is a Senior pursuing a major in computer science. Some of his hobbies include cars, camping, and going to the gym. ",
+    title: "nicholasakrzysiak@lewisu.edu",
   },
   {
-    imgSrc: "public/images/harley.png",
-    name: "Dudette 3",
+    imgSrc: "/images/jaiden.png",
+    name: "Jaiden Leonard",
     description:
-      "Are you the person who thrives in chaos? Do you have a knack for turning disasters into mildly organized messes? We need you to manage the chaos in our office.",
-    title: "Guardian of the Galaxy Member",
+      "Jaiden is a senior majoring in Computer science with a focus on software engineering and development. He enjoys playing videogames and working on cars.",
+    title: "jaidentleonard@lewisu.edu",
   },
   {
-    imgSrc: "public/images/god.png", // Add your new team member's image
-    name: "Dude 4",
+    imgSrc: "/images/bryan.png", // Add your new team member's image
+    name: "Bryan Avalos",
     description:
-      "Are you the master of spreadsheets? Can you organize chaos into a perfectly structured document? We need you to optimize every aspect of our workflow.",
-    title: "Excel Wizard",
+      "Bryan is a senior pursuing a double major in computer science and forensic crimimal investigation. In his free time, he enjoys watching baseball, working on cars, playing videogames, and learning about technology.",
+    title: "bryanhavalos@lewisu.edu",
   },
 ];
 

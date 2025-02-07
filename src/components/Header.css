@@ -8,7 +8,7 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	background: url("/images/Homepage.png") no-repeat center center;
+	background: url("/src/assets/images/Homepage.png") no-repeat center center;
 	background-size: cover;
 	overflow: hidden;
   }

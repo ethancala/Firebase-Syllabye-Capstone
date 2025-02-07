@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link for routing
 import "./DrawerNav.css";
 
 const DrawerNav = () => {
@@ -28,13 +29,12 @@ const DrawerNav = () => {
         <h2>Navigate</h2>
         <nav>
           <ul className="nav nav-pills nav-stacked">
-            <li><a href="#home"><i className="fa fa-home"></i> <span>Home</span></a></li>
-            <li><a href="#about"><i className="fa fa-bookmark"></i> <span>About</span></a></li>
-            <li><a href="#services"><i className="fa fa-tasks"></i> <span>Login</span></a></li>
-            <li><a href="#create"><i className="fa fa-gear"></i> <span>Create</span></a></li>
-            <li><a href="#search"><i className="fa fa-heart"></i> <span>Search</span></a></li>
-            <li><a href="#repo"><i className="fa fa-thumbs-up"></i> <span>Repository</span></a></li>
-            <li><a href="#contact"><i className="fa fa-phone-square"></i> <span>Contact</span></a></li>
+            <li><Link to="/" onClick={toggleDrawer}><i className="fa fa-home"></i> <span>Home</span></Link></li>
+            <li><Link to="/about" onClick={toggleDrawer}><i className="fa fa-bookmark"></i> <span>About</span></Link></li>
+            <li><Link to="/login" onClick={toggleDrawer}><i className="fa fa-tasks"></i> <span>Login</span></Link></li>
+            <li><Link to="/create" onClick={toggleDrawer}><i className="fa fa-gear"></i> <span>Create</span></Link></li>
+            <li><Link to="/browse" onClick={toggleDrawer}><i className="fa fa-heart"></i> <span>Browse</span></Link></li>
+            <li><Link to="/contact" onClick={toggleDrawer}><i className="fa fa-phone-square"></i> <span>Contact</span></Link></li>
           </ul>
         </nav>
 
@@ -44,12 +44,12 @@ const DrawerNav = () => {
           <ul>
             <li>
               <a href="https://www.instagram.com/your-instagram-handle" target="_blank" rel="noreferrer">
-                <i className="fab fa-instagram fa-3x"></i>  {/* ✅ Correct Class Name */}
+                <i className="fab fa-instagram fa-3x"></i>
               </a>
             </li>
             <li>
               <a href="https://github.com/your-github-username" target="_blank" rel="noreferrer">
-                <i className="fab fa-github fa-3x"></i>  {/* ✅ Correct Class Name */}
+                <i className="fab fa-github fa-3x"></i>
               </a>
             </li>
             <li>
@@ -63,7 +63,6 @@ const DrawerNav = () => {
               </a>
             </li>
           </ul>
-
         </div>
       </div>
     </>

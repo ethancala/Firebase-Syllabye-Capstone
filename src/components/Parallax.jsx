@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./Parallax.css"; // Ensure styles are imported
-import studentBooks from "/public/images/student-books.jpg"; // ✅ Import the image
+import studentBooks from "/src/assets/images/student-books.jpg"; // ✅ Import the image
 
 const Parallax = () => {
   return (
