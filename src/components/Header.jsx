@@ -12,7 +12,7 @@ const Header = () => {
       <div className="header-wrapper-inner">
         {/* Logo Centered */}
         <section className="center">
-          <img src="public/images/Syllabye-White-White.png" className="logo-image" alt="Syllabye Logo" />
+          <img src="/images/Syllabye-White-White.png" className="logo-image" alt="Syllabye Logo" />
           <div className="slogan">STREAMLINE. SIMPLIFY.</div>
           <div className="secondary-slogan">SUCCEED.</div>
         </section>
