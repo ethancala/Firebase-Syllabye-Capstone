@@ -1,43 +1,47 @@
-/* eslint-disable no-unused-vars */
+// Services.jsx
 import React from "react";
-import "./Services.css"; // Ensure styles are imported
-import typewriter from "/images/typewriter.jpeg"; // Import from public folder
+import "./Services.css";
+import typewriter from "/images/typewriter.jpeg";
+import { useTranslation } from "react-i18next";
 
 const servicesData = [
     {
         icon: "fa-laptop",
-        title: "Boostrap in React",
-        description: "We use the React front-end framework alongside Bootstrap to build a responsive and dynamic user interface.",
+        titleKey: "services.bootstrapReactTitle",   // references i18n key
+        descKey: "services.bootstrapReactDesc"      // references i18n key
     },
     {
         icon: "fa-cogs",
-        title: "Google Firebase",
-        description: "Firebase provides authentication, cloud storage, and a real-time database, ensuring that each user has a personalized and secure experience with their own SyllaBye.",
+        titleKey: "services.firebaseTitle",
+        descKey: "services.firebaseDesc"
     },
     {
         icon: "fa-pencil-square",
-        title: "Node.js",
-        description: "We use Node.js for its fast, scalable server-side capabilities, allowing us to handle real-time data processing and ensure smooth, efficient performance for our application.",
-    },
+        titleKey: "services.nodejsTitle",
+        descKey: "services.nodejsDesc"
+    }
 ];
 
 const Services = () => {
+    const { t } = useTranslation(); // get the t() function
+
     return (
         <section
             id="services"
-            className="parallax"  // ✅ Add Parallax Class Here
+            className="parallax"
             style={{
                 backgroundImage: `url(${typewriter})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                backgroundAttachment: "fixed", // ✅ Ensure Parallax Effect
+                backgroundAttachment: "fixed"
             }}
         >
             <div className="container text-center">
                 <header className="block-head">
-                    <h1>About our software</h1>
-                    <strong><p>A little about what we do</p></strong>
+                    {/* Use translation keys for headings */}
+                    <h1>{t("services.title")}</h1>
+                    <strong><p>{t("services.subtitle")}</p></strong>
                 </header>
 
                 <section className="block-body">
@@ -46,8 +50,9 @@ const Services = () => {
                             <div key={index} className="col-md-4">
                                 <div className="service">
                                     <i className={`fa ${service.icon}`}></i>
-                                    <h2>{service.title}</h2>
-                                    <p>{service.description}</p>
+                                    {/* Render the translated text via t(...) */}
+                                    <h2>{t(service.titleKey)}</h2>
+                                    <p>{t(service.descKey)}</p>
                                 </div>
                             </div>
                         ))}

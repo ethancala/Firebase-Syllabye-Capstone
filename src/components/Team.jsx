@@ -3,63 +3,65 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./Team.css"; // Ensure styles are imported
+import "./Team.css";
+import { useTranslation } from "react-i18next";
 
+// Only store the image src and a key to look up i18n data
 const teamMembers = [
   {
     imgSrc: "/images/irving.png",
-    name: "Irving Sanchez",
-    description:
-      "Irving is a senior pursuing a major in computer science with a minor in math and thereafter pursuing his masters in computer engineering. On his free time he enjoys playing with with his dogs groot and peter, reading comic books and invites anybody to play a game of chess or magic the gathering with him. ",
-    title: "IrvingFSanchez@lewisu.edu",
+    memberKey: "irving"
   },
   {
     imgSrc: "/images/nick.png",
-    name: "Nick Krzysiak",
-    description:
-      "Nick is a Senior pursuing a major in computer science. Some of his hobbies include cars, camping, and going to the gym. ",
-    title: "nicholasakrzysiak@lewisu.edu",
+    memberKey: "nick"
   },
   {
     imgSrc: "/images/jaiden.png",
-    name: "Jaiden Leonard",
-    description:
-      "Jaiden is a senior majoring in Computer science with a focus on software engineering and development. He enjoys playing videogames and working on cars.",
-    title: "jaidentleonard@lewisu.edu",
+    memberKey: "jaiden"
   },
   {
-    imgSrc: "/images/bryan.png", // Add your new team member's image
-    name: "Bryan Avalos",
-    description:
-      "Bryan is a senior pursuing a double major in computer science and forensic crimimal investigation. In his free time, he enjoys watching baseball, working on cars, playing videogames, and learning about technology.",
-    title: "bryanhavalos@lewisu.edu",
-  },
+    imgSrc: "/images/bryan.png",
+    memberKey: "bryan"
+  }
 ];
 
 const Team = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="testimonials" className="content-block">
       <div className="container">
         <header className="block-heads">
-          <h1>Meet The Team</h1>
+          {/* Replace hard-coded text with translation keys */}
+          <h1>{t("team.title")}</h1>
           <strong>
-            <p>ChairForceOne & TheKrabbyPatties</p>
+            <p>{t("team.subtitle")}</p>
           </strong>
         </header>
 
         <section className="block-body">
           <div className="row">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="col-md-3 team-member">
-                <div className="testimonial">
-                  <img src={member.imgSrc} alt={member.name} />
-                  <p>{member.description}</p>
-                  <strong>{member.name}</strong>
-                  <br />
-                  <span>{member.title}</span>
+            {teamMembers.map((member, index) => {
+              // Build the path to each member's i18n keys
+              const baseKey = `team.members.${member.memberKey}`;
+
+              return (
+                <div key={index} className="col-md-3 team-member">
+                  <div className="testimonial">
+                    {/* alt text = translated name */}
+                    <img
+                      src={member.imgSrc}
+                      alt={t(`${baseKey}.name`)}
+                    />
+                    <p>{t(`${baseKey}.description`)}</p>
+                    <strong>{t(`${baseKey}.name`)}</strong>
+                    <br />
+                    <span>{t(`${baseKey}.title`)}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       </div>

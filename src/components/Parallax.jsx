@@ -1,11 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./Parallax.css"; // Ensure styles are imported
-import studentBooks from "/src/assets/images/student-books.jpg"; // ✅ Import the image
+import studentBooks from "/src/assets/images/student-books.jpg";
+import { useTranslation } from "react-i18next"; // <-- import the hook
 
 const Parallax = () => {
-  return (
+  const { t } = useTranslation(); // get the translation function
 
+  return (
     <section
       id="parallax"
       className="content-block parallax"
@@ -17,13 +19,12 @@ const Parallax = () => {
       }}
     >
       <div className="container text-center">
+        {/* Replace hard-coded text with translation keys */}
         <h1>
-          Dynamic Syllabus Customization. Student-Friendly Features.
-          Collaboration Tools. Accessibility and Inclusivity. Advance Export
-          Options. Employer Friendly Features. Future Scalability.
+          {t("parallax.heading")}
         </h1>
         <a href="#" className="btn btn-o-white btn-lg">
-          Start Creating Your Syllabus
+          {t("parallax.buttonText")}
         </a>
       </div>
     </section>
