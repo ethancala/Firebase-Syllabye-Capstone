@@ -1,13 +1,13 @@
- name: Azure Static Web Apps CI/CD
+name: Azure Static Web Apps CI/CD
 
 on:
   push:
     branches:
-      - main
+      - Production
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - main
+      - Production
 
 jobs:
   build_and_deploy_job:
@@ -15,34 +15,34 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
 
-      - name: Setup Node.js
+      - name: Set up Node.js 20
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Use the correct Node.js version for Vite
+          node-version: 20 # Forces GitHub Actions to use Node.js 20+
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build Vite App
+      - name: Build the App
         run: npm run build
 
-      - name: Deploy to Azure Static Web Apps
+      - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AMBITIOUS_ISLAND_00AB80C10 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GENTLE_MOSS_0FD314310 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          app_location: "/" # Path to your source code
-          api_location: "" # Leave empty if not using an API
-          output_location: "dist" # ⚠️ Change from "build" to "dist" for Vite!
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: "/" # App source code path
+          api_location: "" # API source code path - optional
+          output_location: "dist" # ✅ Change from "build" to "dist"
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
@@ -54,5 +54,5 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AMBITIOUS_ISLAND_00AB80C10 }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GENTLE_MOSS_0FD314310 }}
           action: "close"
