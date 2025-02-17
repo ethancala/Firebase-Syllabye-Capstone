@@ -1,41 +1,48 @@
-/* eslint-disable no-unused-vars */
+// WhyUse.jsx
 import React from "react";
-import "./WhyUse.css"; // Ensure styles are imported
+import "./WhyUse.css";
+import { useTranslation } from "react-i18next";
 
 const reasons = [
   {
     imgSrc: "/images/student-frustrated.jpg",
-    title: "Upload Syllabi",
-    description: "Upload syllabi you may have already created so students can review their course.",
+    titleKey: "whyUse.reasons.uploadSyllabi.title",
+    descKey: "whyUse.reasons.uploadSyllabi.desc",
   },
   {
     imgSrc: "/images/lightbulbs.jpeg",
-    title: "Create New Syllabi",
-    description: "Professors can make their own syllabi so that students can learn and succeed in their classes.",
+    titleKey: "whyUse.reasons.createNewSyllabi.title",
+    descKey: "whyUse.reasons.createNewSyllabi.desc",
   },
   {
     imgSrc: "/images/laptop-board.jpg",
-    title: "View & Download Syllabi",
-    description: "Students can not only see their syllabi, but they can also download them for later use.",
+    titleKey: "whyUse.reasons.viewDownloadSyllabi.title",
+    descKey: "whyUse.reasons.viewDownloadSyllabi.desc",
   },
 ];
 
 const WhyUse = () => {
+  const { t } = useTranslation(); // get the translation function
+
   return (
     <section id="blog" className="content-block">
       <div className="container">
         <header className="block-heading">
-          <h1>Why Use Our Software?</h1>
-          <a href="#" className="btn btn-o btn-lg learn-more">Learn More</a>
+          {/* Use translation keys for the title and button text */}
+          <h1>{t("whyUse.title")}</h1>
+          <a href="#" className="btn btn-o btn-lg learn-more">
+            {t("whyUse.learnMore")}
+          </a>
         </header>
 
         <section className="block-body">
           <div className="row">
             {reasons.map((reason, index) => (
               <div key={index} className="col-sm-4 blog-post">
-                <img src={reason.imgSrc} alt={reason.title} />
-                <a href="#"><h2>{reason.title}</h2></a>
-                <p>{reason.description}</p>
+                <img src={reason.imgSrc} alt={t(reason.titleKey)} />
+                {/* Translate title and description */}
+                <a href="#"><h2>{t(reason.titleKey)}</h2></a>
+                <p>{t(reason.descKey)}</p>
               </div>
             ))}
           </div>
@@ -46,4 +53,3 @@ const WhyUse = () => {
 };
 
 export default WhyUse;
-
