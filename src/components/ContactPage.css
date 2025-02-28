@@ -19,7 +19,7 @@
 
 /* Left Side: Text Content */
 .contact-text-container {
-    width: 40%; /* Adjust width as needed */
+    width: 40%;
     padding: 20px;
     text-align: left;
     justify-content: flex-start;
