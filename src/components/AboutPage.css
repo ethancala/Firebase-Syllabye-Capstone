@@ -1,0 +1,132 @@
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 60px 20px;
+  background: url("/src/assets/images/Homepage.png") no-repeat center center/cover;
+}
+
+.about-page .about-text-container {
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.about-subtitle {
+  font-size: 2rem;
+  margin-top: 30px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.about-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 20px;
+}
+
+/* Professor and Student section */
+.about-use-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.about-use-container > div {
+  flex: 1;
+  max-width: 45%;
+}
+
+.about-use-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.about-team {
+  text-align: center;
+  padding: 60px 0;
+  width: 100%;
+}
+
+.team-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.team-box {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-box:hover {
+  transform: scale(1.05);
+}
+
+.team-box img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 5px solid #800020;
+}
+
+.team-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.team-box p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .about-use-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-use-container > div {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .team-box {
+    width: 250px;
+    height: 220px;
+  }
+
+  .team-box img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+}
