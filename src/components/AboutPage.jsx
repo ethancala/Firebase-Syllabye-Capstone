@@ -1,116 +1,119 @@
 import React from "react";
 import "./AboutPage.css";
+import { useTranslation } from 'react-i18next'; // Import the translation hook
 
 const currentTeamMembers = [
   {
     imgSrc: "/images/irving.png",
-    name: "Irving Sanchez",
-    role: "Irving is a senior pursuing a major in computer science with a minor in math and thereafter pursuing his masters in computer engineering. In his free time he enjoys playing with his dogs Groot and Peter, reading comic books, and invites anyone to play a game of chess or Magic: The Gathering with him.",
+    name: "irving", // Use the key for translation
   },
   {
     imgSrc: "/images/nick.png",
-    name: "Nick",
-    role: "Nick is a Senior pursuing a major in computer science. Some of his hobbies include cars, camping, and going to the gym.",
+    name: "nick", // Use the key for translation
   },
   {
     imgSrc: "/images/jaiden.png",
-    name: "Jaiden Leonard",
-    role: "Jaiden is a senior majoring in computer science with a focus on software engineering and development. He enjoys playing videogames and working on cars.",
+    name: "jaiden", // Use the key for translation
   },
   {
     imgSrc: "/images/bryan.png",
-    name: "Bryan Avalos",
-    role: "Bryan is a senior pursuing a double major in computer science and forensic criminal investigation. In his free time, he enjoys watching baseball, working on cars, playing videogames, and learning about technology.",
+    name: "bryan", // Use the key for translation
   },
 ];
 
 const previousTeamMembers = [
   {
     imgSrc: "/images/josh.png",
-    name: "Josh Brown",
-    role: "Joshua is a sophomore pursuing a major in computer science. In his free time, he enjoys playing guitar, reading, and playing video games.",
+    name: "josh", // Use the key for translation
   },
   {
     imgSrc: "/images/kevin.png",
-    name: "Kevin Danowski",
-    role: "Kevin is a sophomore pursuing a major in computer science. Outside of computer science, he participates in Lewis University's track and field team and enjoys playing video games.",
+    name: "kevin", // Use the key for translation
   },
   {
     imgSrc: "/images/logan.png",
-    name: "Logan Prasczewicz",
-    role: "Logan is a junior pursuing a major in computer science and a concentration in artificial intelligence. In his free time, he enjoys going on roadtrips, playing video games, and watching sports.",
+    name: "logan", // Use the key for translation
   },
   {
     imgSrc: "/images/olivia-1.png",
-    name: "Olivia Adamic",
-    role: "Olivia Adamic is a junior pursuing a major in computer science, minors in mathematics and data science, and a concentration in mobile computing. Beyond her studies, she enjoys taking voice lessons, knitting and crocheting, gardening, and reading."
+    name: "olivia", // Use the key for translation
   },
   {
     imgSrc: "/images/other-kevin.png",
-    name: "Emilio Vichis",
-    role: " Emilio is a junior pursuing a major in computer science. He enjoys spending time with family and friends in addition to going bowling and playing video games.",
+    name: "emilio", // Use the key for translation
   },
   {
     imgSrc: "/images/vykle.jpg",
-    name: "Vy Le",
-    role: "Vy Le is a senior pursuing a major in computer science. Outside of her studies, she enjoys listening to music, watching animes, besides her biggest hobby which is traveling.",
+    name: "vy", // Use the key for translation
   },
   {
     imgSrc: "/images/Emilio.png",
-    name: "Kevin Zamudio",
-    role: "Kevin is a junior pursuing a major in computer science. Outside of his studies, he enjoys reading, gaming, and also practicing MMA.",
+    name: "kevinZ", // Use the key for translation
   },
 ];
-/* New team members can add themselves here when needed */
-const newTeamMembers = [
 
+const newTeamMembers = [
+  // New team members can be added here when needed
 ];
 
 const About = () => {
+  const { t, i18n } = useTranslation(); // Use the translation hook and i18n instance
+
+  // Function to switch language
+  const switchLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <div className="about-page">
+      {/* Language toggle buttons (similar to Header.jsx) */}
+      <div
+        style={{
+          position: "absolute",
+          top: "1rem",
+          right: "1rem",
+        }}
+      >
+        <button onClick={() => switchLanguage('en')}>English</button>
+        <button onClick={() => switchLanguage('es')}>Español</button>
+      </div>
+
       <div className="about-container">
         {/* About Section */}
         <div className="about-text-container">
-          <h1 className="about-title">About Us</h1>
+          <h1 className="about-title">{t('about.title')}</h1>
           <p className="about-description">
-            Welcome to SyllaBye! Our platform is dedicated to making 
-            creating, uploading, storing, and viewing academic syllabi
-            easier for everyone. This includes both professors and students!
-            Read below to learn how to use SyllaBye and meet our team!
+            {t('about.description')}
           </p>
 
-          <h2 className="about-subtitle">Wondering How to Use SyllaBye?</h2>
+          <h2 className="about-subtitle">{t('about.howToUse')}</h2>
 
-          <h2 className="about-subtitle">Professors:</h2>
+          <h2 className="about-subtitle">{t('about.professors')}</h2>
           <p className="about-description">
-            Professors can upload and create syllabi for students to use before and during the semester. 
-            Navigate to the browse tab to upload a PDF version of your course syllabus.
+            {t('about.professorsDesc1')}
           </p>
           <p className="about-description">
-            Coming soon: Create new syllabi with the formatted Lewis University template
-            that helps you and students stay more organized!
+            {t('about.professorsDesc2')}
           </p>
 
-          <h2 className="about-subtitle">Students:</h2>
+          <h2 className="about-subtitle">{t('about.students')}</h2>
           <p className="about-description">
-            Students can view and download course syllabi all in one place to make learning easier!
-            Navigate to the browse tab to view previously uploaded syllabi by professors.
+            {t('about.studentsDesc')}
           </p>  
         </div>
       </div>
       
       {/* Capstone Team Section */}
       <div className="about-team">
-        <h2 className="about-subtitle">Meet Our Team</h2>
-        <h2 className="about-subtitle">ChairForceOne</h2>
+        <h2 className="about-subtitle">{t('about.meetOurTeam')}</h2>
+        <h2 className="about-subtitle">{t('about.chairForceOne')}</h2>
 
         <div className="team-boxes">
           {currentTeamMembers.map((member, index) => (
             <div key={index} className="team-box">
               <img src={member.imgSrc} alt={member.name} />
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
+              <h3>{t(`team.members.${member.name}.name`)}</h3>
+              <p>{t(`team.members.${member.name}.description`)}</p>
             </div>
           ))}
         </div>
@@ -118,21 +121,21 @@ const About = () => {
 
       {/* 2024 Fall Capstone Team Section */}
       <div className="about-team">
-        <h2 className="about-subtitle">TheKrabbyPatties</h2>
+        <h2 className="about-subtitle">{t('about.theKrabbyPatties')}</h2>
         <div className="team-boxes">
           {previousTeamMembers.map((member, index) => (
             <div key={index} className="team-box">
               <img src={member.imgSrc} alt={member.name} />
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
+              <h3>{t(`team.members.${member.name}.name`)}</h3>
+              <p>{t(`team.members.${member.name}.description`)}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 2025 Sofware Engineering Team */}
+      {/* 2025 Software Engineering Team */}
       <div className="about-team">
-        <h2 className="about-subtitle">TheDevDen (Coming Soon)</h2>
+        <h2 className="about-subtitle">{t('about.theDevDen')}</h2>
         <div className="team-boxes">
           {newTeamMembers.map((member, index) => (
             <div key={index} className="team-box">
@@ -143,7 +146,6 @@ const About = () => {
           ))}
         </div>
       </div>
-
     </div>
   );
 };
