@@ -55,7 +55,6 @@ const previousTeamMembers = [
 const newTeamMembers = [
   // New team members can be added here when needed
 ];
-
 const About = () => {
   const { t, i18n } = useTranslation(); // Use the translation hook and i18n instance
 
@@ -72,9 +71,15 @@ const About = () => {
           position: "absolute",
           top: "1rem",
           right: "1rem",
+          zIndex: 1000, // Ensure buttons are above other content
         }}
       >
-        <button onClick={() => switchLanguage('en')}>English</button>
+        <button 
+          onClick={() => switchLanguage('en')}
+          style={{ marginRight: "0.5rem" }}
+        >
+          English
+        </button>
         <button onClick={() => switchLanguage('es')}>Español</button>
       </div>
 
