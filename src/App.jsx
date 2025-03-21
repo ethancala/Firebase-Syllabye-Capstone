@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Create from "./pages/Create";
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/browse" element={<Browse />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/create" element={<Create />} />
         </Routes>
       </div>
 

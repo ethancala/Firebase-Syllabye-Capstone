@@ -1,8 +1,13 @@
 import React from "react";
+import SyllabusForm from "../components/SyllabusForm";
 
 const Create = () => {
-    return <h1>Create</h1>;
-  };
+  return (
+    <div> 
+      <SyllabusForm /> 
+    </div>
+  );
+};
   
-  export default Create;
+export default Create;
   
