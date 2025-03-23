@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { auth, createUserWithEmailAndPassword } from "../Firebase";
+import { auth, createUserWithEmailAndPassword, provider, signInWithPopup, db, doc, setDoc } from "../Firebase";
 import { Link, useNavigate } from "react-router-dom";
-import { db, doc, setDoc } from "../Firebase";
 import "./../components/Auth.css";
 
 const Signup = () => {
@@ -46,6 +45,26 @@ const Signup = () => {
       } else {
         setError(err.message);
       }
+    }
+  };
+
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      await setDoc(doc(db, "users", user.uid), {
+        firstName: user.displayName.split(" ")[0],
+        lastName: user.displayName.split(" ")[1],
+        email: user.email,
+        role: isStudent ? "student" : "teacher",
+      });
+
+      navigate("/");
+    } catch (error) {
+      console.error("Error signing in with Google: ", error);
+      setError(error.message);
     }
   };
 
@@ -111,6 +130,9 @@ const Signup = () => {
 
           <button type="submit" disabled={!isPasswordValid}>Continue</button>
         </form>
+        <p>
+          <Link to="#" onClick={handleGoogleSignIn}>Sign up with Google</Link>
+        </p>
         <p>Already have an account? <Link to="/login">Log in here</Link></p>
       </div>
     </div>

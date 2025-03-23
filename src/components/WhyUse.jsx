@@ -1,23 +1,26 @@
-// WhyUse.jsx
 import React from "react";
 import "./WhyUse.css";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const reasons = [
   {
     imgSrc: "/images/student-frustrated.jpg",
     titleKey: "whyUse.reasons.uploadSyllabi.title",
     descKey: "whyUse.reasons.uploadSyllabi.desc",
+    link: "/browse", 
   },
   {
     imgSrc: "/images/lightbulbs.jpeg",
     titleKey: "whyUse.reasons.createNewSyllabi.title",
     descKey: "whyUse.reasons.createNewSyllabi.desc",
+    link: "/create", 
   },
   {
     imgSrc: "/images/laptop-board.jpg",
     titleKey: "whyUse.reasons.viewDownloadSyllabi.title",
     descKey: "whyUse.reasons.viewDownloadSyllabi.desc",
+    link: "/browse",
   },
 ];
 
@@ -40,8 +43,9 @@ const WhyUse = () => {
             {reasons.map((reason, index) => (
               <div key={index} className="col-sm-4 blog-post">
                 <img src={reason.imgSrc} alt={t(reason.titleKey)} />
-                {/* Translate title and description */}
-                <a href="#"><h2>{t(reason.titleKey)}</h2></a>
+                <Link to={reason.link}>
+                  <h2>{t(reason.titleKey)}</h2>
+                </Link>
                 <p>{t(reason.descKey)}</p>
               </div>
             ))}
@@ -53,3 +57,4 @@ const WhyUse = () => {
 };
 
 export default WhyUse;
+

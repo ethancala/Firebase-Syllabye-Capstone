@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { auth, signInWithEmailAndPassword, sendPasswordResetEmail } from "../Firebase";
+import { auth, signInWithEmailAndPassword, sendPasswordResetEmail, provider, signInWithPopup } from "../Firebase";
 import { Link, useNavigate } from "react-router-dom";
 import "./../components/Auth.css";
 
@@ -52,6 +52,19 @@ const Login = () => {
     }
   };
 
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      navigate("/");
+    } catch (error) {
+      console.error("Error signing in with Google: ", error);
+      setError(error.message);
+    }
+  };
+
   return (
     <div className="auth-page">
       <div className="auth-container">
@@ -87,7 +100,7 @@ const Login = () => {
 
           <button type="submit">Continue</button>
         </form>
-
+        <p><Link to="#" onClick={handleGoogleSignIn}>Login with Google</Link></p>
         <p>Forgot your password?  <Link to="#" onClick={handlePasswordReset} className="reset-password-link">Reset it here</Link></p>
         <p>Don't have an account? <Link to="/signup">Sign up now</Link></p>
       </div>

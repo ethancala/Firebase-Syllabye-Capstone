@@ -8,7 +8,9 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard"
 import "bootstrap/dist/css/bootstrap.min.css";
+import Create from "./pages/Create";
 
 
 const App = () => {
@@ -21,10 +23,12 @@ const App = () => {
         <Routes> 
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/browse" element={<Browse />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/create" element={<Create />} />
         </Routes>
       </div>
 

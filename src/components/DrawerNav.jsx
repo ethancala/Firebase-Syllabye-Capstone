@@ -67,9 +67,10 @@ const DrawerNav = () => {
               </li>
             )}
             <li><Link to="/" onClick={toggleDrawer}><i className="fa fa-home"></i> <span>Home</span></Link></li>
-            <li><Link to="/about" onClick={toggleDrawer}><i className="fa fa-bookmark"></i> <span>About</span></Link></li>
+            <li><Link to="/dashboard" onClick={toggleDrawer}><i className="fa fa-gear"></i> <span>Dashboard</span></Link></li>
             <li><Link to="/create" onClick={toggleDrawer}><i className="fa fa-gear"></i> <span>Create</span></Link></li>
             <li><Link to="/browse" onClick={toggleDrawer}><i className="fa fa-heart"></i> <span>Browse</span></Link></li>
+            <li><Link to="/about" onClick={toggleDrawer}><i className="fa fa-bookmark"></i> <span>About</span></Link></li>
             <li><Link to="/contact" onClick={toggleDrawer}><i className="fa fa-phone-square"></i> <span>Contact</span></Link></li>
             <li>
               {isLoggedIn ? (

@@ -1,0 +1,47 @@
+/* Large screens (desktops) */
+@media (min-width: 992px) {
+    .custom-modal .modal-dialog {
+      width: 90vw; /* Makes modal almost fullscreen width */
+      max-width: 90vw; /* Prevents exceeding viewport */
+      max-height: 85vh; /* Ensures it doesn’t take the full height */
+      margin: auto; /* Keeps it centered */
+    }
+  }
+  
+  /* Medium screens (tablets, smaller laptops) */
+  @media (max-width: 991px) {
+    .custom-modal .modal-dialog {
+      width: 95vw; /* Slightly more space on smaller screens */
+      max-width: 95vw;
+      max-height: 85vh;
+      margin: auto;
+    }
+  }
+  
+  /* Small screens (mobile) */
+  @media (max-width: 576px) {
+    .custom-modal .modal-dialog {
+      width: 98vw; /* Almost full-screen on small devices */
+      max-width: 98vw;
+      max-height: 90vh; /* Leaves a little margin at top/bottom */
+      margin: 5vh auto; /* Keeps spacing at the top */
+    }
+  }
+  
+  /* Modal content */
+  .custom-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh; /* Limits height */
+    overflow: hidden; /* Ensures controlled content flow */
+    border-radius: 10px; /* Smooth edges */
+    padding: 15px;
+  }
+  
+  /* Ensures modal body is scrollable */
+  .custom-modal .modal-body {
+    flex: 1; /* Takes up available space */
+    overflow-y: auto; /* Enables scrolling inside */
+    padding: 20px;
+  }
+  
