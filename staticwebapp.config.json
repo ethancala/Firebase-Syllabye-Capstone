@@ -9,6 +9,10 @@
         "allowedRoles": ["anonymous"]
       },
       {
+        "route": "/images/*",
+        "allowedRoles": ["anonymous"]
+      },
+      {
         "route": "/*",
         "rewrite": "/index.html"
       }
