@@ -45,7 +45,7 @@ const BrowsePdfs = () => {
               <div className="pdf-block">
                 
                 <img
-                  src="images/Syllabye-White-White.png"
+                  src="/images/Syllabye-White-White.png"
                   alt="PDF Preview"
                   className="pdf-preview"
                 />
