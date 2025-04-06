@@ -8,11 +8,6 @@ import { useTranslation } from "react-i18next";
 
 // Only store the image src and a key to look up i18n data
 const teamMembers = [
-
-  {
-    imgSrc: "/images/ethan.png",
-    memberKey: "ethan",
-  },
   { 
     imgSrc: "/images/irving.png",
     memberKey: "irving"

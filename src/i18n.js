@@ -73,7 +73,7 @@ const resources = {
             // TEAM
             "team": {
                 "title": "Meet The Team",
-                "subtitle": "ChairForceOne & TheDevDen",
+                "subtitle": "ChairForceOne",
                 "members": {
                     
 
