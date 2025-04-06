@@ -11,7 +11,7 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard"
 import "bootstrap/dist/css/bootstrap.min.css";
 import Create from "./pages/Create";
-
+import EditUpload from "./pages/EditUpload";
 
 const App = () => {
   return (
@@ -29,6 +29,7 @@ const App = () => {
           <Route path="/browse" element={<Browse />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/create" element={<Create />} />
+          <Route path="/EditUpload" element={<EditUpload />} />
         </Routes>
       </div>
 
