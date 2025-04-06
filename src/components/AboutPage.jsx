@@ -53,8 +53,12 @@ const previousTeamMembers = [
 ];
 
 const newTeamMembers = [
-  // New team members can be added here when needed
+  {
+    imgSrc: "/images/ethan.png",
+    name: "ethan", // Use the key for translation
+  },
 ];
+
 const About = () => {
   const { t, i18n } = useTranslation(); // Use the translation hook and i18n instance
 
@@ -145,8 +149,8 @@ const About = () => {
           {newTeamMembers.map((member, index) => (
             <div key={index} className="team-box">
               <img src={member.imgSrc} alt={member.name} />
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
+              <h3>{t(`team.members.${member.name}.name`)}</h3>
+              <p>{t(`team.members.${member.name}.description`)}</p>
             </div>
           ))}
         </div>
