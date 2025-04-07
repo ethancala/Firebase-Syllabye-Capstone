@@ -1,7 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Button, Form } from 'react-bootstrap';
 
-function CourseSchedule({ formData, handleChange }) {
+function CourseSchedule({ formData, handleChange, onValidation }) {
+    const [errors, setErrors] = useState({
+        scheduleChanges: '',
+        scheduleDesc: ''
+    });
+
+    useEffect(() => {
+        const validationRules = [
+            { name: 'scheduleChanges', label: 'Schedule Changes', value: formData.scheduleChanges },
+            { name: 'scheduleDesc', label: 'Schedule Description', value: formData.scheduleDesc },
+        ];
+
+        const newErrors = validationRules.reduce((acc, field) => {
+            if (!field.value.trim()) {
+                acc[field.name] = `${field.label} is required`;
+            } else {
+                acc[field.name] = '';
+            }
+            return acc;
+        }, {});
+
+        setErrors(newErrors);
+        onValidation(newErrors); // Notify SyllabusForm with errors for this step
+    }, [formData, onValidation]);
+
+    const formFields = [
+        { label: 'Schedule Description', name: 'scheduleDesc', placeholder: 'Enter a description for the course schedule' },
+        { label: 'Schedule Changes', name: 'scheduleChanges', placeholder: 'Enter information about potential schedule changes' },
+    ];
+
     const [schedule, setSchedule] = useState(
         formData.schedule || Array(8).fill(null).map(() => ({ week: '', topics: '', assignments: '' }))
     );
@@ -9,7 +38,7 @@ function CourseSchedule({ formData, handleChange }) {
     const handleAddRow = () => {
         setSchedule([
             ...schedule,
-            { week: '', topics: '', assignments: '' }, 
+            { week: '', topics: '', assignments: '' },
         ]);
     };
 
@@ -26,37 +55,30 @@ function CourseSchedule({ formData, handleChange }) {
     };
 
     // Update parent formData state when schedule changes
-    React.useEffect(() => {
+    useEffect(() => {
         handleChange({ target: { name: 'schedule', value: schedule } });
     }, [schedule, handleChange]);
 
     return (
         <div className="section">
             <h4>Course Schedule</h4>
-            
-            {/* Schedule Description */}
-            <Form.Group controlId="scheduleDesc">
-                <Form.Label>Schedule Description</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter a description for the course schedule"
-                    name="scheduleDesc"
-                    value={formData.scheduleDesc}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-                        {/* Schedule Changes */}
-                        <Form.Group controlId="scheduleChanges">
-                <Form.Label>Schedule Changes</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter information about potential schedule changes"
-                    name="scheduleChanges"
-                    value={formData.scheduleChanges}
-                    onChange={handleChange}
-                />
-            </Form.Group>
+            {formFields.map((field) => (
+                <Form.Group controlId={field.name} key={field.name}>
+                    <Form.Label>{field.label}</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        rows={3}
+                        placeholder={field.placeholder}
+                        name={field.name}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        isInvalid={!!errors[field.name]}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                        {errors[field.name]}
+                    </Form.Control.Feedback>
+                </Form.Group>
+            ))}
 
             <h4>Week by Week Schedule</h4>
             {/* Table for Course Schedule */}

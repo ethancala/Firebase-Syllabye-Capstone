@@ -4,6 +4,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getDatabase, ref as dbRef, set } from "firebase/database";
 import SyllabusPDF from './SyllabusPDF';
 import { Button } from "react-bootstrap";
+import './SyllabusForm.css';
 
 const SyllabusUploader = ({ formData }) => {
     const [uploading, setUploading] = useState(false);
@@ -60,7 +61,7 @@ const SyllabusUploader = ({ formData }) => {
 
     return (
         <div>
-            <Button onClick={handleUpload} disabled={uploading}>
+            <Button onClick={handleUpload} disabled={uploading} className="open-modal-button mt-2 mb-2">
                 {uploading ? "Uploading..." : "Upload Syllabus"}
             </Button>
 
