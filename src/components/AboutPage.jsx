@@ -57,6 +57,12 @@ const newTeamMembers = [
     imgSrc: "/images/ethan.png",
     name: "ethan", // Use the key for translation
   },
+  {
+    name: "yash", // Use the key for translation
+  },
+  {
+    name: "joshua", // Use the key for translation
+  },
 ];
 
 const About = () => {
