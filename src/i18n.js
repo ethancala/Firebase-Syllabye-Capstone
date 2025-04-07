@@ -73,8 +73,23 @@ const resources = {
             // TEAM
             "team": {
                 "title": "Meet The Team",
-                "subtitle": "ChairForceOne & TheKrabbyPatties",
+                "subtitle": "ChairForceOne",
                 "members": {
+                    
+
+                    "ethan": {
+                        "name": "Ethan Cala",
+                        "description": "Ethan is a senior pursing a major in computer science, who is passionate about creating innovative solutions and constantly learning new technologies. Specializing in web development, IT engineering, and software engineering."
+                    },
+                    "yash": {
+                        "name": "Yeswanth Sai Edhala",
+                        "description": "Yash is a senior pursing a major in computer science, who is passionate about creating innovative solutions and constantly learning new technologies. Specializing in web development, IT engineering, and software engineering."
+                    },
+                    "joshua": {
+                        "name": "Joshua Vachachira",
+                        "description": "Joshua is a senior pursing a major in computer science, who is passionate about creating innovative solutions and constantly learning new technologies. Specializing in web development, IT engineering, and software engineering."
+                    },
+                    
                     // Current Team Members
                     "irving": {
                         "name": "Irving Sanchez",
@@ -138,7 +153,7 @@ const resources = {
                 "meetOurTeam": "Meet Our Team",
                 "chairForceOne": "ChairForceOne",
                 "theKrabbyPatties": "TheKrabbyPatties",
-                "theDevDen": "TheDevDen (Coming Soon)"
+                "theDevDen": "TheDevDen"
             }
         }
     },

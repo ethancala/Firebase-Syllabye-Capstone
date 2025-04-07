@@ -1,179 +1,113 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 
-function CourseInfo({ formData, handleChange }) {
+function CourseInfo({ formData, handleChange, onValidation }) {
+    const [errors, setErrors] = useState({
+        courseName: '',
+        courseSectionNumber: '',
+        courseYear: '',
+        courseTerm: '',
+        creditHours: '',
+        courseDescription: '',
+        prerequisites: '',
+        courseTimes: '',
+        courseDates: '',
+        meetingLocation: '',
+        finalDate: '',
+        learningOutcomes: '',
+        bacCharactersitics: '',
+        modalityInstruction: '',
+        uMission: '',
+    });
+
+    // Regex for courseSectionNumber (Ex: CPSC-20000-02)
+    const courseSectionRegex = /^[A-Z]{4}-\d{5}-\d{2}$/;
+    // Ensure user enters this for naming convention
+    const validTerms = ['Spring', 'Fall', 'Summer'];
+    // Regex for courseYear (ensures it is a year for naming convention)
+    const courseYearRegex = /^\d{4}$/;
+
+    useEffect(() => {
+        const validationRules = [
+            { name: 'courseName', label: 'Course Name', value: formData.courseName },
+            { name: 'courseSectionNumber', label: 'Course Abbreviation, Number, and Section', value: formData.courseSectionNumber, regex: courseSectionRegex },
+            { name: 'courseYear', label: 'Course Year', value: formData.courseYear, regex: courseYearRegex },
+            { name: 'courseTerm', label: 'Course Term', value: formData.courseTerm, validTerms: validTerms },
+            { name: 'creditHours', label: 'Credit Hours', value: formData.creditHours },
+            { name: 'courseDescription', label: 'Course Description', value: formData.courseDescription },
+            { name: 'prerequisites', label: 'Prerequisites', value: formData.prerequisites },
+            { name: 'courseTimes', label: 'Course Meeting Days/Times', value: formData.courseTimes },
+            { name: 'courseDates', label: 'Course Meeting Dates', value: formData.courseDates },
+            { name: 'meetingLocation', label: 'Meeting Location', value: formData.meetingLocation },
+            { name: 'finalDate', label: 'Course Final', value: formData.finalDate },
+            { name: 'learningOutcomes', label: 'Student Learning Outcomes', value: formData.learningOutcomes },
+            { name: 'bacCharactersitics', label: 'Baccalaureate Characteristics', value: formData.bacCharactersitics },
+            { name: 'modalityInstruction', label: 'Modality of Instruction', value: formData.modalityInstruction },
+            { name: 'uMission', label: 'University Mission', value: formData.uMission },
+        ];
+
+        const newErrors = validationRules.reduce((acc, field) => {
+            if (!field.value || field.value.trim() === '') {
+                acc[field.name] = `${field.label} is required`;
+            } else if (field.regex && !field.regex.test(field.value)) {
+                // Custom validation for regex fields
+                if (field.name === 'courseYear') {
+                    acc[field.name] = `${field.label} must be a valid four-digit year`;
+                } else {
+                    acc[field.name] = `${field.label} is not in the correct format`;
+                }
+            } else if (field.validTerms && !field.validTerms.includes(field.value)) {
+                acc[field.name] = `${field.label} must be one of the following: ${field.validTerms.join(', ')}`;
+            } else {
+                acc[field.name] = '';
+            }
+            return acc;
+        }, {});
+
+        setErrors(newErrors);
+        onValidation(newErrors); // Notify SyllabusForm with errors for this step
+    }, [formData, onValidation]);
+
+    // Sorry for this being sloppy
+    const formFields = [
+        { label: 'Course Name', name: 'courseName', placeholder: 'Enter the name of the course' },
+        { label: 'Course Abbreviation, Number, and Section', name: 'courseSectionNumber', placeholder: 'Format Ex: CPSC-20000-002' },
+        { label: 'Course Year', name: 'courseYear', placeholder: 'Format Ex: 2025' },
+        { label: 'Course Term', name: 'courseTerm', placeholder: '"Spring", "Fall", "Summer"' },
+        { label: 'Credit Hours', name: 'creditHours', placeholder: 'Enter the amount of credit hours the course is worth' },
+        { label: 'Course Description', name: 'courseDescription', placeholder: 'Enter a brief course description', isTextArea: true },
+        { label: 'Prerequisites', name: 'prerequisites', placeholder: 'Enter the prerequisites that must be taken' },
+        { label: 'Course Meeting Days/Times', name: 'courseTimes', placeholder: 'Example: MWF 10-1050AM' },
+        { label: 'Course Meeting Dates', name: 'courseDates', placeholder: 'Enter the start and end date of the course' },
+        { label: 'Meeting Location', name: 'meetingLocation', placeholder: 'Example: Arts and Sciences (AS) 104A & Zoom' },
+        { label: 'Course Final', name: 'finalDate', placeholder: 'Enter the date of the final for the course' },
+        { label: 'Student Learning Outcomes', name: 'learningOutcomes', placeholder: 'Enter what the student learning outcomes should be for the course', isTextArea: true },
+        { label: 'Baccalaureate Characteristics', name: 'bacCharactersitics', placeholder: 'Enter the baccalaureate characteristics for the course', isTextArea: true },
+        { label: 'Modality of Instruction', name: 'modalityInstruction', placeholder: 'Enter the modality of instruction for the course' },
+        { label: 'University Mission', name: 'uMission', placeholder: 'Enter how this course connects to the university mission', isTextArea: true },
+    ];
+
     return (
         <div className="section">
             <h4>Course Information</h4>
-            <Form.Group controlId="courseName">
-                <Form.Label>Course</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter the name of the course"
-                    name="courseName"
-                    value={formData.courseName}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="courseSectionNumber">
-                <Form.Label>Course Abbreviation, Number, and Section</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Format Ex: CPSC-20000-002"
-                    name="courseSectionNumber"
-                    value={formData.courseSectionNumber}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="courseYear">
-                <Form.Label>Course Year</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Format Ex: 2025"
-                    name="courseYear"
-                    value={formData.courseYear}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="courseTerm">
-                <Form.Label>Course Term</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder='"Spring", "Fall", "Summer"'
-                    name="courseTerm"
-                    value={formData.courseTerm}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="creditHours">
-                <Form.Label>Credit Hours</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter the amount of credit hours the course is worth"
-                    name="creditHours"
-                    value={formData.creditHours}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="courseDescription">
-                <Form.Label> Course Description</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    rows={3}
-                    placeholder="Enter a brief course description"
-                    name="courseDescription"
-                    value={formData.courseDescription}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="prerequisites">
-                <Form.Label>Prerequisuites</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter the preqreuisites that must be taken"
-                    name="prerequisites"
-                    value={formData.prerequisites}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="courseTimes">
-                <Form.Label>Course Meeting Days/Times</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Example: MWF 10-1050AM"
-                    name="courseTimes"
-                    value={formData.courseTimes}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="courseDates">
-                <Form.Label>Course Meeting Dates</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter the start and end date of the course"
-                    name="courseDates"
-                    value={formData.courseDates}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="meetingLocation">
-                <Form.Label>Meeting Location</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Example: Arts and Sciences (AS) 104A & Zoom"
-                    name="meetingLocation"
-                    value={formData.meetingLocation}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="finalDate">
-                <Form.Label>Course Final</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter the date of the final for the course"
-                    name="finalDate"
-                    value={formData.finalDate}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="learningOutcomes">
-                <Form.Label>Student Learning Outcomes</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    rows={3}
-                    placeholder="Enter what the student learning outcomes should be for the course"
-                    name="learningOutcomes"
-                    value={formData.learningOutcomes}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="bacCharactersitics">
-                <Form.Label>Baccalaureate Characteristics</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    rows={3}
-                    placeholder="Enter the baccalaureate characteristics for the course"
-                    name="bacCharactersitics"
-                    value={formData.bacCharactersitics}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="modalityInstruction">
-                <Form.Label>Modality of Instruction</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter the modality of instruction for the course"
-                    name="modalityInstruction"
-                    value={formData.modalityInstruction}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="uMission">
-                <Form.Label>University Mission</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    rows={3}
-                    placeholder="Enter how this course connects to the university mission"
-                    name="uMission"
-                    value={formData.uMission}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
+            {formFields.map((field) => (
+                <Form.Group controlId={field.name} key={field.name}>
+                    <Form.Label>{field.label}</Form.Label>
+                    <Form.Control
+                        as={field.isTextArea ? 'textarea' : 'input'}
+                        rows={field.isTextArea ? 3 : undefined}
+                        type={field.isTextArea ? undefined : 'text'}
+                        placeholder={field.placeholder}
+                        name={field.name}
+                        value={formData[field.name] || ''} 
+                        onChange={handleChange}
+                        isInvalid={!!errors[field.name]}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                        {errors[field.name]}
+                    </Form.Control.Feedback>
+                </Form.Group>
+            ))}
         </div>
     );
 }

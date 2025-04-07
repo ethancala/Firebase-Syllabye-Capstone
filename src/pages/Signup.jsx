@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { auth, createUserWithEmailAndPassword, provider, signInWithPopup, db, doc, setDoc } from "../Firebase";
+import React, { useState, useEffect } from "react";
+import { auth, createUserWithEmailAndPassword, provider, signInWithRedirect, getRedirectResult, db, doc, setDoc } from "../Firebase";
 import { Link, useNavigate } from "react-router-dom";
 import "./../components/Auth.css";
 
@@ -17,6 +17,34 @@ const Signup = () => {
   const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
   const isLongEnough = password.length >= 8;
   const isPasswordValid = hasUppercase && hasLowercase && hasSpecialChar && isLongEnough;
+
+  useEffect(() => {
+    const handleRedirectResult = async () => {
+      try {
+        const result = await getRedirectResult(auth);
+        if (result) {
+          const user = result.user;
+
+          // Save user data to Firestore
+          await setDoc(doc(db, "users", user.uid), {
+            firstName: user.displayName.split(" ")[0],
+            lastName: user.displayName.split(" ")[1],
+            email: user.email,
+            role: isStudent ? "student" : "teacher",
+          });
+
+          navigate("/");
+        }
+      } catch (error) {
+        if (error.code !== "auth/no-current-user") {
+          console.error("Error handling redirect result: ", error);
+          setError(error.message);
+        }
+      }
+    };
+
+    handleRedirectResult();
+  }, [auth, db, isStudent, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,17 +79,7 @@ const Signup = () => {
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-
-      await setDoc(doc(db, "users", user.uid), {
-        firstName: user.displayName.split(" ")[0],
-        lastName: user.displayName.split(" ")[1],
-        email: user.email,
-        role: isStudent ? "student" : "teacher",
-      });
-
-      navigate("/");
+      await signInWithRedirect(auth, provider);
     } catch (error) {
       console.error("Error signing in with Google: ", error);
       setError(error.message);
@@ -76,6 +94,7 @@ const Signup = () => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
+            id="firstName"
             placeholder="First Name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
@@ -84,6 +103,7 @@ const Signup = () => {
 
           <input
             type="text"
+            id="lastName"
             placeholder="Last Name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
@@ -107,6 +127,7 @@ const Signup = () => {
 
           <input
             type="email"
+            id="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -115,6 +136,7 @@ const Signup = () => {
 
           <input
             type="password"
+            id="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

@@ -2,7 +2,6 @@ import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 import { academicInfo, studentHealth, additionalPolicy, universityMission } from './StaticSyllabusText';
 import logo from '/images/lewis-banner.png';
-import SyllabusUploader from './SyllabusUploader';
 
 // Styles for formatting PDF
 const styles = StyleSheet.create({
@@ -65,7 +64,24 @@ const styles = StyleSheet.create({
 
 });
 
-const SyllabusPDF = ({ formData }) => (
+const calculateGradeTotals = (data) => {
+    let totalNumber = 0;
+    let totalPoints = 0;
+    let totalPercent = 0;
+
+    data.forEach(row => {
+        totalNumber += parseFloat(row.number) || 0;
+        totalPoints += parseFloat(row.totalPoints) || 0;
+        totalPercent += parseFloat(row.percent) || 0;
+    });
+
+    return { totalNumber, totalPoints, totalPercent };
+};
+
+const SyllabusPDF = ({ formData }) => {
+    const totals = calculateGradeTotals(formData.gradeBreakdown || []);
+    
+    return (
         <Document>
             <Page size="A4" style={styles.page}>
                 <View style={styles.header}>
@@ -211,6 +227,42 @@ const SyllabusPDF = ({ formData }) => (
                     <Text style={[styles.text, styles.tabText]}>Grading Policies: {formData.gradingPolicy}</Text>
                 </View>
 
+                <View style={styles.section}>
+                    <Text style={[styles.text, styles.tabText]}>Course Grade: {'The course grade will be based on the following.'}</Text>
+                </View>
+
+                <View style={styles.gradingTable}>
+                    {/* Table Header */}
+                    <View style={[styles.gradingTableRow, styles.gradingTableHeader]}>
+                        <Text style={styles.gradingTableCell}>Assignment</Text>
+                        <Text style={styles.gradingTableCell}>Points</Text>
+                        <Text style={styles.gradingTableCell}>#</Text>
+                        <Text style={styles.gradingTableCell}>Total Points</Text>
+                        <Text style={[styles.gradingTableCell, styles.gradingTableLastCell]}>% of Grade</Text>
+                    </View>
+
+                    {/* Table Rows */}
+                    {formData.gradeBreakdown && formData.gradeBreakdown.map((row, index) => (
+                        <View key={index} style={styles.gradingTableRow}>
+                            <Text style={styles.gradingTableCell}>{row.assignment}</Text>
+                            <Text style={styles.gradingTableCell}>{row.points}</Text>
+                            <Text style={styles.gradingTableCell}>{row.number}</Text>
+                            <Text style={styles.gradingTableCell}>{row.totalPoints}</Text>
+                            <Text style={[styles.gradingTableCell, styles.gradingTableLastCell]}>{row.percent}</Text>
+                        </View>
+                    ))}
+
+                    {/* Totals Row */}
+                    <View style={styles.gradingTableRow}>
+                        <Text style={styles.gradingTableCell}><Text style={{ fontWeight: 'bold' }}>Total</Text></Text>
+                        <Text style={styles.gradingTableCell}></Text>
+                        <Text style={styles.gradingTableCell}>{totals.totalNumber}</Text>
+                        <Text style={styles.gradingTableCell}>{totals.totalPoints}</Text>
+                        <Text style={[styles.gradingTableCell, styles.gradingTableLastCell]}>{totals.totalPercent}</Text>
+                    </View>
+                </View>
+
+
                 {/* Grading Scale */}
                 <View style={styles.section}>
                     <Text style={styles.title}>Grading Scale</Text>
@@ -287,7 +339,9 @@ const SyllabusPDF = ({ formData }) => (
 
             </Page>        
         </Document> 
-);
+
+    );
+};
 
 export default SyllabusPDF;
 
