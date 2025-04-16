@@ -61,6 +61,7 @@ const newTeamMembers = [
     name: "yash", // Use the key for translation
   },
   {
+    imgSrc: "/images/Joshua-V.png",
     name: "joshua", // Use the key for translation
   },
 ];

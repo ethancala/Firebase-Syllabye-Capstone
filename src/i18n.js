@@ -87,7 +87,7 @@ const resources = {
                     },
                     "joshua": {
                         "name": "Joshua Vachachira",
-                        "description": "Joshua is a senior pursing a major in computer science, who is passionate about creating innovative solutions and constantly learning new technologies. Specializing in web development, IT engineering, and software engineering."
+                        "description": "Joshua is Junior pursing a major in Computer Science with a minor in Business Adminstration, who is passionate on web development and will like to learn Cybersecurity. Eventually wants to start a businnes manging websites and protecting them."
                     },
                     
                     // Current Team Members
