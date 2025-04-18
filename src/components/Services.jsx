@@ -1,5 +1,3 @@
-// Services.jsx
-import React from "react";
 import "./Services.css";
 import typewriter from "/images/typewriter.jpeg";
 import { useTranslation } from "react-i18next";
@@ -41,7 +39,7 @@ const Services = () => {
                 <header className="block-head">
                     {/* Use translation keys for headings */}
                     <h1>{t("services.title")}</h1>
-                    <strong><p>{t("services.subtitle")}</p></strong>
+
                 </header>
 
                 <section className="block-body">

@@ -17,12 +17,14 @@
 /* Center title */
 .block-heading h1 {
     flex: 1;
+    color: #f4f4f4;
     text-align: left;
     margin: 0;
 }
 
 /* Right-align Learn More button */
 .learn-more {
+    color: #f4f4f4;
     margin-left: auto;
 }
 
