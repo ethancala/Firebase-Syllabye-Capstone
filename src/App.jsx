@@ -12,6 +12,8 @@ import Dashboard from "./pages/Dashboard"
 import "bootstrap/dist/css/bootstrap.min.css";
 import Create from "./pages/Create";
 import EditUpload from "./pages/EditUpload";
+import './App.css';
+
 
 const App = () => {
   return (

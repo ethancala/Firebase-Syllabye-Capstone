@@ -1,16 +1,20 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getDownloadURL, deleteObject, ref } from "firebase/storage";
+import { getDownloadURL, deleteObject, ref, uploadBytes, getBlob } from "firebase/storage";
 import { storage } from "../Firebase";
-import { getAuth } from "firebase/auth";
-import { uploadBytes, getBlob } from "firebase/storage";
-import { onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../Firebase"; 
+import EditSyllabusForm from "../components/EditSyllabusForm"; 
+
 function EditUpload() {
   const location = useLocation();
   const navigate = useNavigate();
   const { fileName, file } = location.state || {};
 
   const [pdfPreviewUrl, setPdfPreviewUrl] = useState(null);
+  const [syllabusData, setSyllabusData] = useState(null); // ✅ ADDED
+  const [showModal, setShowModal] = useState(false);       // ✅ ADDED
 
   const auth = getAuth();
   const user = auth.currentUser;
@@ -47,50 +51,66 @@ function EditUpload() {
     }
   };
 
+  const handlePublicUpload = async () => {
+    const auth = getAuth();
+    const waitForAuth = () =>
+      new Promise((resolve) =>
+        onAuthStateChanged(auth, (user) => resolve(user))
+      );
 
- 
+    const user = await waitForAuth();
+    const userId = user?.uid;
 
-  
-  
+    if (!userId || !fileName) {
+      alert("User not authenticated or file missing.");
+      return;
+    }
 
-const handlePublicUpload = async () => {
-  const auth = getAuth();
+    const privateFileRef = ref(storage, `uploads/${userId}/${fileName}`);
+    const publicFileRef = ref(storage, `pdfs/${fileName}`);
 
-  const waitForAuth = () =>
-    new Promise((resolve) =>
-      onAuthStateChanged(auth, (user) => resolve(user))
-    );
+    try {
+      const blob = await getBlob(privateFileRef);
+      await uploadBytes(publicFileRef, blob);
+      alert("File uploaded publicly!");
+    } catch (error) {
+      console.error("Error uploading file publicly:", error);
+      alert("Upload failed: " + error.message);
+    }
+  };
 
-  const user = await waitForAuth();
-  const userId = user?.uid;
+  const handleEdit = async () => {
+    if (!userId || !fileName) {
+      alert("User not authenticated or file name missing.");
+      return;
+    }
 
-  if (!userId || !fileName) {
-    alert("User not authenticated or file missing.");
-    return;
-  }
+    try {
+      console.log("Searching Firestore for fileName:", fileName);
 
-  const privateFileRef = ref(storage, `uploads/${userId}/${fileName}`);
-  const publicFileRef = ref(storage, `pdfs/${fileName}`);
+      const q = query(
+        collection(db, "syllabusFields"),
+        where("fileName", "==", fileName)
+      );
+      const snapshot = await getDocs(q);
 
-  try {
-    console.log("[Upload] Getting blob from Firebase Storage...");
-    const blob = await getBlob(privateFileRef);
-    console.log("[Upload] Blob retrieved. Uploading to:", publicFileRef.fullPath);
+      console.log("Query result size:", snapshot.size);
 
-    await uploadBytes(publicFileRef, blob);
-    alert("File uploaded publicly!");
-  } catch (error) {
-    console.error("Error uploading file publicly:", error);
-    alert("Upload failed: " + error.message);
-  }
-};
-
-  
-  
-  
-
+      if (!snapshot.empty) {
+        const docData = snapshot.docs[0].data();
+        setSyllabusData(docData); // ✅ SET FORM DATA
+        setShowModal(true);       // ✅ OPEN MODAL
+      } else {
+        alert("No syllabus metadata found in Firestore.");
+      }
+    } catch (error) {
+      console.error("Error fetching syllabus metadata:", error);
+      alert("Failed to load syllabus details.");
+    }
+  };
 
   return (
+    
     <div
       style={{
         display: "flex",
@@ -152,6 +172,22 @@ const handlePublicUpload = async () => {
               >
                 Upload Publicly
               </button>
+
+              <button
+                onClick={handleEdit}
+                style={{
+                  marginTop: "1.5rem",
+                  padding: "0.5rem 1rem",
+                  backgroundColor: "#910000",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "6px",
+                  cursor: "pointer",
+                  fontSize: "16px",
+                }}
+              >
+                Edit
+              </button>
             </>
           ) : (
             <p>Loading preview...</p>
@@ -160,6 +196,14 @@ const handlePublicUpload = async () => {
       ) : (
         <p>No file name provided.</p>
       )}
+      {showModal && syllabusData && (
+      <EditSyllabusForm
+        showModal={showModal}
+        handleClose={() => setShowModal(false)}
+        initialData={syllabusData}
+      />
+    )}
+
     </div>
   );
 }
