@@ -10,15 +10,20 @@ This guide explains how to set up **internationalization (i18n)** in a React (Vi
 
 ## Table of Contents
 
-1. [Prerequisites](#1-prerequisites)
-2. [Installation](#2-installation)
-3. [Project Structure](#project-structure)
-4. [Create the i18n Configuration](#4-create-the-i18n-configuration)
-5. [Initialize i18n in `main.jsx`](#5-initialize-i18n-in-mainjsx)
-6. [Use Translations in Components](#6-use-translations-in-components)
-7. [Example: Language Switch](#7-example-language-switch)
-8. [Advanced Tips](#8-advanced-tips)
-9. [License](#9-license)
+- [Multi-Language Support Setup Guide](#multi-language-support-setup-guide)
+  - [React i18n Setup with `react-i18next`](#react-i18n-setup-with-react-i18next)
+  - [Table of Contents](#table-of-contents)
+  - [1. Prerequisites](#1-prerequisites)
+  - [2. Installation](#2-installation)
+  - [4. Create the i18n Configuration](#4-create-the-i18n-configuration)
+    - [Notes on Translation Data](#notes-on-translation-data)
+  - [5. Initialize i18n in `main.jsx`](#5-initialize-i18n-in-mainjsx)
+  - [6. Use Translations in Components](#6-use-translations-in-components)
+  - [7. Example: Language Switch](#7-example-language-switch)
+  - [8. Advanced Tips](#8-advanced-tips)
+  - [9. License](#9-license)
+    - [Contributing](#contributing)
+  - [That’s it](#thats-it)
 
 ---
 

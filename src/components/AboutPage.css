@@ -7,33 +7,44 @@
   width: 100%;
   padding: 60px 20px;
   background: url("/src/assets/images/Homepage.png") no-repeat center center/cover;
-  position: relative; /* Add this to ensure buttons are positioned relative to the page */
+  position: relative;
 }
 
-/* Language toggle buttons */
-.language-toggle {
+/* Language toggle buttons - NEW STYLES */
+.about-page div[style*="absolute"] {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  z-index: 1000; /* Ensure buttons are above other content */
   display: flex;
   gap: 0.5rem;
+  z-index: 900 !important;
 }
 
-.language-toggle button {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  border: 1px solid #ccc;
+.about-page div[style*="absolute"] button {
+  background-color: #800000; /* Maroon */
+  color: white;
+  border: 2px solid white;
+  padding: 8px 16px;
   border-radius: 4px;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
-.language-toggle button:hover {
-  background-color: rgba(255, 255, 255, 1); /* Solid white on hover */
+.about-page div[style*="absolute"] button:hover {
+  background-color: #600000; /* Darker maroon */
+  transform: scale(1.05);
 }
 
+.about-page div[style*="absolute"] button:nth-child(2) {
+  background-color: #1E90FF; /* Spanish button blue */
+}
+
+.about-page div[style*="absolute"] button:nth-child(2):hover {
+  background-color: #0066CC;
+}
+
+/* Existing styles below... */
 .about-page .about-text-container {
   max-width: 800px;
   text-align: center;
@@ -57,7 +68,6 @@
   margin-bottom: 20px;
 }
 
-/* Professor and Student section */
 .about-use-container {
   display: flex;
   justify-content: space-between;
@@ -108,7 +118,7 @@
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 15px;
-  border: 5px solid #800020;
+  border: 5px solid #800000;
 }
 
 .team-box h3 {
@@ -121,7 +131,6 @@
   color: #555;
 }
 
-/* For smaller screens */
 @media (max-width: 768px) {
   .about-use-container {
     flex-direction: column;

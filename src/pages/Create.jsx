@@ -1,4 +1,3 @@
-import React from "react";
 import SyllabusForm from "../components/SyllabusForm";
 import CreateInstructions from "../components/CreateInstructions";
 

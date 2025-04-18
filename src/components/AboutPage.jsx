@@ -1,4 +1,3 @@
-import React from "react";
 import "./AboutPage.css";
 import { useTranslation } from 'react-i18next'; // Import the translation hook
 
