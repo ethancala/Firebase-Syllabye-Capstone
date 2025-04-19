@@ -1,6 +1,4 @@
 // src/components/TechStack.jsx
-
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -47,7 +45,7 @@ const TechStack = () => {
           {/* Replace hard-coded text with translated strings */}
           <h1>{t('techStack.title')}</h1>
           <a
-            href="https://github.com/your-github-repo"
+            href="https://github.com/ChairForce-1-0/Syllabye-Capstone"
             className="btn btn-o btn-lg github-button"
           >
             {t('techStack.githubRepo')}

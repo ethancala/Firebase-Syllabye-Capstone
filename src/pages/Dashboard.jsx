@@ -1,4 +1,3 @@
-import React from "react";
 import UserNameDisplay from "../components/UserNameDisplay";
 import MyUploads from "../components/MyUploads";
 import PdfUploader from "../components/PdfUploader";

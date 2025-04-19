@@ -1,4 +1,3 @@
-import React from "react";
 import DrawerNav from "./DrawerNav";
 import { useTranslation } from 'react-i18next'; // <-- import the hook
 import "./Header.css";

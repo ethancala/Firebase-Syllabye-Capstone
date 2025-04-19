@@ -2,37 +2,48 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   min-height: 100vh;
   width: 100%;
-  padding: 60px 20px;
-  background: url("/src/assets/images/Homepage.png") no-repeat center center/cover;
-  position: relative; /* Add this to ensure buttons are positioned relative to the page */
+  padding: var(--space-xl) var(--space-md);
+  background: linear-gradient(rgba(0, 0, 0, 0.377), rgba(0, 0, 0, 0.062)), 
+              url("/src/assets/images/Homepage.png") no-repeat center center/cover;
+  position: relative;
 }
 
-/* Language toggle buttons */
-.language-toggle {
+/* Language toggle buttons - NEW STYLES */
+.about-page div[style*="absolute"] {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  z-index: 1000; /* Ensure buttons are above other content */
   display: flex;
   gap: 0.5rem;
+  z-index: 900 !important;
 }
 
-.language-toggle button {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  border: 1px solid #ccc;
+.about-page div[style*="absolute"] button {
+  background-color: #800000; /* Maroon */
+  color: white;
+  border: 2px solid white;
+  padding: 8px 16px;
   border-radius: 4px;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
-.language-toggle button:hover {
-  background-color: rgba(255, 255, 255, 1); /* Solid white on hover */
+.about-page div[style*="absolute"] button:hover {
+  background-color: #600000; /* Darker maroon */
+  transform: scale(1.05);
 }
+
+.about-page div[style*="absolute"] button:nth-child(2) {
+  background-color: #1E90FF; /* Spanish button blue */
+}
+
+.about-page div[style*="absolute"] button:nth-child(2):hover {
+  background-color: #0066CC;
+}
+
 
 .about-page .about-text-container {
   max-width: 800px;
@@ -41,6 +52,7 @@
 }
 
 .about-title {
+  margin-top: 60px;
   font-size: 2.5rem;
   color: white;
 }
@@ -48,7 +60,7 @@
 .about-subtitle {
   font-size: 2rem;
   margin-top: 30px;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.86) !important;
 }
 
 .about-description {
@@ -57,7 +69,6 @@
   margin-bottom: 20px;
 }
 
-/* Professor and Student section */
 .about-use-container {
   display: flex;
   justify-content: space-between;
@@ -89,13 +100,14 @@
 }
 
 .team-box {
-  background-color: #f1f1f1;
+  background: var(--dark-gray);
   border-radius: 10px;
   padding: 20px;
   width: 250px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .team-box:hover {
@@ -108,20 +120,20 @@
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 15px;
-  border: 5px solid #800020;
+  border: 5px solid #800000;
 }
 
 .team-box h3 {
+  color: #ff7272;
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
 .team-box p {
   font-size: 1rem;
-  color: #555;
+  color: #ffffff;
 }
 
-/* For smaller screens */
 @media (max-width: 768px) {
   .about-use-container {
     flex-direction: column;

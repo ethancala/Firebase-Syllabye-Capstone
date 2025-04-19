@@ -18,13 +18,15 @@
 
 /* Moves GitHub button to the right */
 .block-headge .github-button {
+    color: #f4f4f4;
     margin-left: auto;
 }
 
 /* Force Tech Stack title to stay left */
 .block-headge h1 {
     flex: 1;
-    text-align: left;  /* Align text to the left */
+    color: #f4f4f4;  /* Ensure text color is consistent */
+    text-align: center;  /* Align text to the left */
     margin: 0;
 }
 /* Prevent icon overflow & spacing issues */

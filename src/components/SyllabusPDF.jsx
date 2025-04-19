@@ -50,10 +50,10 @@ const styles = StyleSheet.create({
     },
 
     header: {
-        flexDirection: 'column',  // Stack the items vertically
-        alignItems: 'center',     // Center the text horizontally
-        justifyContent: 'center', // Center the text vertically (if needed)
-        textAlign: 'center',      // Optional: Ensures the text itself is centered
+        flexDirection: 'column', 
+        alignItems: 'center',     
+        justifyContent: 'center', 
+        textAlign: 'center',      
     },
     image: {
         width: 200,

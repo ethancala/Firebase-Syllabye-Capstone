@@ -1,0 +1,133 @@
+.create-instructions-container {
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.instruction-card {
+    background-color: #1a1d1d !important;
+    border-radius: 15px !important;
+    border: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 2rem 0;
+}
+
+.instruction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+.instruction-title {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem !important;
+}
+
+.instruction-heading {
+    color: #ffffff !important;
+    font-size: 2.2rem !important;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 25px !important;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.instruction-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #940731;
+    border-radius: 2px;
+}
+
+.instruction-list {
+    font-size: 1.1rem;
+    color: #ffffff;
+    counter-reset: step-counter;
+    padding-left: 0;
+}
+
+.instruction-list li {
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+    position: relative;
+    text-align: left;
+}
+
+.instruction-list li::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    background: #940731;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.instruction-list strong {
+    color: #940731;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .instruction-card {
+        margin: 1rem;
+        border-radius: 10px !important;
+    }
+
+    .instruction-title {
+        font-size: 1.5rem !important;
+    }
+
+    .instruction-heading {
+        font-size: 1.8rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .instruction-heading::after {
+        width: 40px;
+        height: 2px;
+    }
+
+    .instruction-list {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+
+    .instruction-list li {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Alert styles (keep at bottom) */
+.alert.alert-danger {
+    background-color: #800000 !important;
+    border-color: #2b2d2e !important;
+    color: #ffffff !important;
+}
+
+.alert-danger .btn-close {
+    filter: invert(1) brightness(2) !important;
+}
+
+.fade.show {
+    opacity: 1 !important;
+    transition: opacity 0.5s linear !important;
+}

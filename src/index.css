@@ -1,4 +1,7 @@
 @import "./assets/styles.css";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 * {outline: none !important;}
 
@@ -45,17 +48,17 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6{		
 	margin: 0 0 15px 0;	
-	color: #940731;
+	color: #800000;
 	font-family: 'Alegreya Sans';
 }
 
 .btn{border-radius: 0;}
 .btn-o {
-    border: 1px solid #940731;
-    color: #940731;
+    border: 1px solid #ffffff;
+    color: #800000;
 }
 .btn-o:hover {
-    background: #940731;
+    background: #ffffff3b;
     color: white;
 }
 .btn.btn-o-white {
@@ -64,6 +67,6 @@ h1, h2, h3, h4, h5, h6{
     background: transparent;
 }
 .btn.btn-o-white:hover {
-    background: #940731;
+    background: #800000;
     color: #ffffff;
 }
