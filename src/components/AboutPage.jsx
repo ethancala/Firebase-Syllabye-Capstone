@@ -3,19 +3,19 @@ import { useTranslation } from 'react-i18next'; // Import the translation hook
 
 const currentTeamMembers = [
   {
-    imgSrc: "/images/irving.png",
+    imgSrc: "/images/irving-portrait.png",
     name: "irving", // Use the key for translation
   },
   {
-    imgSrc: "/images/nick.png",
+    imgSrc: "/images/nick-portrait.png",
     name: "nick", // Use the key for translation
   },
   {
-    imgSrc: "/images/jaiden.png",
+    imgSrc: "/images/jaiden-portrait.png",
     name: "jaiden", // Use the key for translation
   },
   {
-    imgSrc: "/images/bryan.png",
+    imgSrc: "/images/bryan-portrait.png",
     name: "bryan", // Use the key for translation
   },
 ];
@@ -57,11 +57,17 @@ const newTeamMembers = [
     name: "ethan", // Use the key for translation
   },
   {
-    name: "yash", // Use the key for translation
+    imgSrc: "/images/anon.png",
+    name: "ethan", // Use the key for translation
   },
   {
+<<<<<<< HEAD
     imgSrc: "/images/Joshua-V.png",
     name: "joshua", // Use the key for translation
+=======
+    imgSrc: "/images/anon.png",
+    name: "ethan", // Use the key for translation
+>>>>>>> d1f2843 (Update Team Photos)
   },
 ];
 

@@ -150,7 +150,7 @@ const resources = {
                 "professorsDesc2": "Coming soon: Create new syllabi with the formatted Lewis University template that helps you and students stay more organized!",
                 "students": "Students:",
                 "studentsDesc": "Students can view and download course syllabi all in one place to make learning easier! Navigate to the browse tab to view previously uploaded syllabi by professors.",
-                "meetOurTeam": "Meet Our Team",
+                "meetOurTeam": "Meet the Squads",
                 "chairForceOne": "ChairForceOne",
                 "theKrabbyPatties": "TheKrabbyPatties",
                 "theDevDen": "TheDevDen"

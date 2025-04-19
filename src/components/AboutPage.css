@@ -124,7 +124,7 @@
 }
 
 .team-box h3 {
-  color: #ff7272;
+  color: #ff7272 !important;
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
