@@ -277,7 +277,22 @@ const resources = {
                     "kevinZ": {
                         "name": "Kevin Zamudio",
                         "description": "Kevin es un estudiante de tercer año que cursa la carrera de informática. Fuera de sus estudios, disfruta leer, jugar videojuegos y practicar MMA."
-                    }
+                    },
+
+                    // The Dev Den
+                    "ethan": {
+                        "name": "Ethan Cala",
+                        "description": "Ethan es un estudiante de último año cursando la licenciatura en Ciencias de la Computación, apasionado por crear soluciones innovadoras y aprender constantemente nuevas tecnologías. Se especializa en desarrollo web, ingeniería en TI e ingeniería de software."
+                    },
+                    "yash": {
+                        "name": "Yeswanth Sai Edhala",
+                        "description": "Yash es un estudiante de último año cursando la licenciatura en Ciencias de la Computación, apasionado por crear soluciones innovadoras y aprender constantemente nuevas tecnologías. Se especializa en desarrollo web, ingeniería en TI e ingeniería de software."
+                    },
+                    "joshua": {
+                        "name": "Joshua Vachachira",
+                        "description": "Joshua es un estudiante de tercer año cursando la licenciatura en Ciencias de la Computación con una especialización en Administración de Empresas. Apasionado por el desarrollo web y con interés en aprender Ciberseguridad. Su meta es emprender un negocio de gestión y protección de sitios web."
+                    },
+
                 }
             },
 

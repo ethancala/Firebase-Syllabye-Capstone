@@ -58,16 +58,11 @@ const newTeamMembers = [
   },
   {
     imgSrc: "/images/anon.png",
-    name: "ethan", // Use the key for translation
+    name: "yash", // Use the key for translation
   },
   {
-<<<<<<< HEAD
     imgSrc: "/images/Joshua-V.png",
     name: "joshua", // Use the key for translation
-=======
-    imgSrc: "/images/anon.png",
-    name: "ethan", // Use the key for translation
->>>>>>> d1f2843 (Update Team Photos)
   },
 ];
 
