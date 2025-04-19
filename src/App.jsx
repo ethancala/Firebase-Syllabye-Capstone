@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom"; 
 import Navbar from "./components/Navbar";
 import DrawerNav from "./components/DrawerNav"; // Import DrawerNav
-import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Browse from "./pages/Browse";
 import Contact from "./pages/Contact";
@@ -35,7 +34,6 @@ const App = () => {
         </Routes>
       </div>
 
-      <Footer /> 
     </>
   );
 };
