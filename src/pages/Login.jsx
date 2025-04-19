@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { auth, signInWithEmailAndPassword, sendPasswordResetEmail, provider, signInWithPopup } from "../Firebase";
+import { auth, signInWithEmailAndPassword, sendPasswordResetEmail, provider, signInWithRedirect, getRedirectResult } from "../Firebase";
 import { Link, useNavigate } from "react-router-dom";
 import "./../components/Auth.css";
 
@@ -17,7 +17,27 @@ const Login = () => {
       setEmail(savedEmail);
       setRememberMe(true);
     }
-  }, []);
+
+    // Handle redirect result
+    const handleRedirectResult = async () => {
+      try {
+        const result = await getRedirectResult(auth);
+        if (result) {
+          const user = result.user;
+
+          // Navigate to the home page after successful login
+          navigate("/");
+        }
+      } catch (error) {
+        if (error.code !== "auth/no-current-user") {
+          console.error("Error handling redirect result: ", error);
+          setError(error.message);
+        }
+      }
+    };
+
+    handleRedirectResult();
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,10 +75,7 @@ const Login = () => {
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-
-      navigate("/");
+      await signInWithRedirect(auth, provider); // Use redirect instead of popup
     } catch (error) {
       console.error("Error signing in with Google: ", error);
       setError(error.message);
@@ -74,6 +91,7 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <input
             type="email"
+            id="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -82,6 +100,7 @@ const Login = () => {
 
           <input
             type="password"
+            id="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

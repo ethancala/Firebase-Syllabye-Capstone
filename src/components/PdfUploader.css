@@ -1,6 +1,21 @@
+.main-content {
+  background-color: #202324;;
+}
+
+.main-content p {
+  color: #f4f4f4;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.main-content h2 {
+  color: #ff7272;
+  margin-bottom: 20px;
+}
+
 .pdf-uploader-container {
   display: flex;
-  justify-content: space-between; /* Button on the right, link centered */
   align-items: center;
   width: 100%;
   padding: 10px 20px;
@@ -104,4 +119,16 @@
 .modal-footer .btn-secondary {
   background-color: #6c757d; /* Bootstrap gray */
   border-radius: 8px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  accent-color: #28a745; /* green */
+  transform: scale(1.2); /* make it a bit bigger */
+  cursor: pointer;
+}
+
+.custom-checkbox label {
+  margin-left: 0.5rem;
+  font-weight: 500;
+  color: #444;
 }

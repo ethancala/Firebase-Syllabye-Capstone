@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "@hookform/resolvers": "^5.0.1",
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
     "@react-pdf/renderer": "^4.3.0",
     "bootstrap": "^5.3.3",
+    "buffer": "^6.0.3",
     "csv-parser": "^3.2.0",
     "firebase": "^11.5.0",
     "firebase-admin": "^13.2.0",
@@ -22,15 +24,18 @@
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.55.0",
     "react-i18next": "^15.4.1",
     "react-router-dom": "^7.4.0",
     "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-basic-ssl": "^2.0.0",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.17.0",

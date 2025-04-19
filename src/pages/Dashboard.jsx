@@ -1,13 +1,15 @@
-import React from "react";
 import UserNameDisplay from "../components/UserNameDisplay";
-
+import MyUploads from "../components/MyUploads";
+import PdfUploader from "../components/PdfUploader";
 
 const Dashboard = () => {
   return (
     
     <div> 
-        <UserNameDisplay />
-      <h1>test</h1>
+        <UserNameDisplay />,
+        <PdfUploader />
+        <MyUploads />
+      
     </div>
   );
 };

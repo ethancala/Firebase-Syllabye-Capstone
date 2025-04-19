@@ -1,7 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Table, Button } from 'react-bootstrap';
 
-function CoursePolicy({ formData, handleChange }) {
+function CoursePolicy({ formData, handleChange, onValidation }) {
+    const [errors, setErrors] = useState({
+        gradingPolicy: '',
+        coursePolicy: '',
+        assignmentAndGradeChanges: '',
+    });
+
+    useEffect(() => {
+        const validationRules = [
+            { name: 'gradingPolicy', label: 'Grading Policies', value: formData.gradingPolicy || '' },
+            { name: 'coursePolicy', label: 'Course Policies', value: formData.coursePolicy || '' },
+            { name: 'assignmentAndGradeChanges', label: 'Assignment/Grade Changes', value: formData.assignmentAndGradeChanges || '' },
+        ];
+    
+        const newErrors = validationRules.reduce((acc, field) => {
+            if (!field.value.trim()) {
+                acc[field.name] = `${field.label} is required`;
+            } else {
+                acc[field.name] = '';
+            }
+            return acc;
+        }, {});
+    
+        setErrors(newErrors);
+        onValidation(newErrors); // Notify SyllabusForm with errors for this step
+    }, [formData, onValidation]);
+    
+    const formFields = [
+        { label: 'Grading Policies', name: 'gradingPolicy', placeholder: 'Enter your grading policy here. (ex: late policy)' },
+        { label: 'Course Policies', name: 'coursePolicy', placeholder: 'Enter your course policies here. (ex: attendance & technology use)' },
+        { label: 'Assignment/Grade Changes', name: 'assignmentAndGradeChanges', placeholder: 'Enter how changes to assignments/grades will be communicated' },
+    ];
+
     const [gradingScale, setGradingScale] = useState(formData.gradingScale || [
         { score: '93-100%', letterGrade: 'A' },
         { score: '90-92.9%', letterGrade: 'A-' },
@@ -44,42 +76,23 @@ function CoursePolicy({ formData, handleChange }) {
         <div className="section">
             <h4>Grading/Course Policies</h4>
 
-            {/* Grading Policies Text Area */}
-            <Form.Group controlId="gradingPolicy">
-                <Form.Label>Grading Policies</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    rows={3}
-                    placeholder="Enter your grading policy here. (ex: late policy)"
-                    name="gradingPolicy"
-                    value={formData.gradingPolicy}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            {/* Course Policies Text Area */}
-            <Form.Group controlId="coursePolicy">
-                <Form.Label>Course Policies</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    rows={3}
-                    placeholder="Enter your course policies here. (ex: attendance & technology use)"
-                    name="coursePolicy"
-                    value={formData.coursePolicy}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="assignmentAndGradeChanges">
-                <Form.Label>Schedule Description</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter how changes to assignments/grades will be communicated"
-                    name="assignmentAndGradeChanges"
-                    value={formData.assignmentAndGradeChanges}
-                    onChange={handleChange}
-                />
-            </Form.Group>            
+            {formFields.map((field) => (
+                <Form.Group controlId={field.name} key={field.name}>
+                    <Form.Label>{field.label}</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        rows={3}
+                        placeholder={field.placeholder}
+                        name={field.name}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        isInvalid={!!errors[field.name]}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                        {errors[field.name]}
+                    </Form.Control.Feedback>
+                </Form.Group>
+            ))}         
 
             {/* Grading Scale Table */}
             <h4>Grading Scale</h4>

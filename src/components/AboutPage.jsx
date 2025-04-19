@@ -1,4 +1,3 @@
-import React from "react";
 import "./AboutPage.css";
 import { useTranslation } from 'react-i18next'; // Import the translation hook
 
@@ -56,6 +55,12 @@ const newTeamMembers = [
   {
     imgSrc: "/images/ethan.png",
     name: "ethan", // Use the key for translation
+  },
+  {
+    name: "yash", // Use the key for translation
+  },
+  {
+    name: "joshua", // Use the key for translation
   },
 ];
 

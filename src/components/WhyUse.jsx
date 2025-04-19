@@ -1,11 +1,10 @@
-import React from "react";
 import "./WhyUse.css";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const reasons = [
   {
-    imgSrc: "/images/student-frustrated.jpg",
+    imgSrc: "/images/upload-laptop.jpeg",
     titleKey: "whyUse.reasons.uploadSyllabi.title",
     descKey: "whyUse.reasons.uploadSyllabi.desc",
     link: "/browse", 
@@ -33,9 +32,6 @@ const WhyUse = () => {
         <header className="block-heading">
           {/* Use translation keys for the title and button text */}
           <h1>{t("whyUse.title")}</h1>
-          <a href="#" className="btn btn-o btn-lg learn-more">
-            {t("whyUse.learnMore")}
-          </a>
         </header>
 
         <section className="block-body">
