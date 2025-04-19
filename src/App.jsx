@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Create from "./pages/Create";
 import EditUpload from "./pages/EditUpload";
 import './App.css';
+import TestTailwind from "./pages/TestTailwind";
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/create" element={<Create />} />
           <Route path="/EditUpload" element={<EditUpload />} />
+          <Route path="/devTestTailwind" element={<TestTailwind />} />
         </Routes>
       </div>
 
