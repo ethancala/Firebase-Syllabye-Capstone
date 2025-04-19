@@ -1,8 +1,6 @@
-/* Main container styling */
 #blog {
-    background-color: #f4f4f4;
-    padding: 60px 0;
-}
+    background: var(--medium-gray);
+  }
 
 /* Block heading styling */
 .block-heading {
@@ -31,7 +29,7 @@
 /* Blog post layout */
 .blog-post {
     text-align: center;
-    background: white;
+    background: var(--dark-gray);
     padding: 20px;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;
@@ -45,14 +43,14 @@
 }
 
 .blog-post h2 {
+    color: var(--primary-maroon);
     font-size: 20px;
     margin-bottom: 10px;
 }
 
 .blog-post p {
-    font-size: 16px;
-    color: #555;
-}
+    color: var(--secondary-text); /* Better readability */
+  }
 
 /* Hover effect */
 .blog-post:hover {
