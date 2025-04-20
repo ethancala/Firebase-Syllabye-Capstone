@@ -1,6 +1,6 @@
 // src/components/TechStack.jsx
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./TechStack.css";
 import { useTranslation } from "react-i18next"; // <-- import the hook
@@ -33,45 +33,47 @@ const TechStack = () => {
     arrows: false,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 4 } },
-      { breakpoint: 768,  settings: { slidesToShow: 3 } },
-      { breakpoint: 480,  settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 480, settings: { slidesToShow: 2 } },
     ],
   };
 
   return (
     <section id="tech-stack" className="content-block">
-      <div className="container" style={{ marginBottom: "-16%", paddingBottom: "0px" }}>
+      <div
+        className="container"
+        style={{ marginBottom: "-18%", paddingBottom: "0px" }}
+      >
         <header className="block-headge">
           {/* Replace hard-coded text with translated strings */}
-          <h1>{t('techStack.title')}</h1>
+          <h1>{t("techStack.title")}</h1>
           <a
             href="https://github.com/ChairForce-1-0/Syllabye-Capstone"
             className="btn btn-o btn-lg github-button"
           >
-            {t('techStack.githubRepo')}
+            {t("techStack.githubRepo")}
           </a>
         </header>
 
         <strong>
-          <p className="tech-subtitle">
-            {t('techStack.subtitle')}
-          </p>
+          <p className="tech-subtitle">{t("techStack.subtitle")}</p>
         </strong>
 
-        <div className="slider-container">
-          <Slider {...settings}>
-            {techLogos.map((logo, index) => (
-              <div key={index} className="slide">
-                <img
-                  src={logo.src}
-                  // alt text is dynamically loaded based on the altKey 
-                  alt={t(`techStack.altText.${logo.altKey}`)}
-                  height="100"
-                  width="100"
-                />
-              </div>
-            ))}
-          </Slider>
+        <div className="slider-fade-wrapper">
+          <div className="slider-container">
+            <Slider {...settings}>
+              {techLogos.map((logo, index) => (
+                <div key={index} className="slide">
+                  <img
+                    src={logo.src}
+                    alt={t(`techStack.altText.${logo.altKey}`)}
+                    height="100"
+                    width="100"
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </section>

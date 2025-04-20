@@ -12,7 +12,7 @@
 /* Styling for the heading */
 #parallax h1 {
     margin-bottom: 30px;
-    font-size: 24px;
+    font-size: 24px !important;
     max-width: 80%;
     margin: auto;
 }
@@ -21,7 +21,7 @@
 .btn-o-white {
     display: inline-block;
     padding: 12px 24px;
-    font-size: 18px;
+    font-size: 18px !important;
     border: 2px solid white;
     border-color: var(--light-text);
     color: var(--light-text);

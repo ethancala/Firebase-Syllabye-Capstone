@@ -31,7 +31,8 @@ We’re a team of passionate developers and problem-solvers from Lewis Universit
 | **Jaiden Leonard**  | Security Wizard               | Turns security into reality.        |
 | **Bryan Avalos**    | Frontend Magician             | Knows every framework ever created. |
 
-Refer to the links below for more info. 
+Refer to the links below for more info.
+
 - [TEAM.md](./TEAM.md) - Team members, roles, and communication  
 - [PROCESS.md](./PROCESS.md) - Scrum process, events, and workflows  
 
@@ -66,7 +67,6 @@ Before you begin, make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v14 or higher)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
-- [MongoDB](https://www.mongodb.com/) (local or cloud-based, like MongoDB Atlas)
 
 More to come, updates coming soon....
 

@@ -1,9 +1,8 @@
 /* Ensure the entire section stays properly aligned */
 #tech-stack {
-  padding: 20px 0;
-  background-color: #f4f4f4;
-  text-align: left;
-  overflow: hidden; /* Prevents overflow */
+  background-color: #202324; /* Match site theme */
+  color: var(--light-text);
+  text-align: center;
 }
   
 /* Aligns Tech Stack title to the left & GitHub button to the right */
@@ -24,10 +23,11 @@
 
 /* Force Tech Stack title to stay left */
 .block-headge h1 {
-    flex: 1;
-    color: #f4f4f4;  /* Ensure text color is consistent */
-    text-align: center;  /* Align text to the left */
-    margin: 0;
+  font-size: 2rem;
+  color: var(--white-100);
+  margin: 0;
+  flex: 1;
+  text-align: center;
 }
 /* Prevent icon overflow & spacing issues */
 .slider-container {
@@ -68,5 +68,33 @@
   
   .slick-dots {
     bottom: -30px;
+  }
+  
+  .slider-fade-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 var(--space-lg);
+  }
+  
+  .slider-fade-wrapper::before,
+  .slider-fade-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 620px; /* Adjust width for how much fading you want */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .slider-fade-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #202324 0%, transparent 100%);
+  }
+  
+  .slider-fade-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #202324 0%, transparent 100%);
   }
   

@@ -1,167 +1,115 @@
 import "./AboutPage.css";
-import { useTranslation } from 'react-i18next'; // Import the translation hook
+import { useTranslation } from 'react-i18next';
+import "bootstrap/dist/css/bootstrap.min.css";
+import TeamCarousel from '../components/TeamCarousel';
+import React from 'react'; // Explicit React import
 
 const currentTeamMembers = [
-  {
-    imgSrc: "/images/irving-portrait.png",
-    name: "irving", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/nick-portrait.png",
-    name: "nick", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/jaiden-portrait.png",
-    name: "jaiden", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/bryan-portrait.png",
-    name: "bryan", // Use the key for translation
-  },
-];
-
-const previousTeamMembers = [
-  {
-    imgSrc: "/images/josh.png",
-    name: "josh", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/kevin.png",
-    name: "kevin", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/logan.png",
-    name: "logan", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/olivia-1.png",
-    name: "olivia", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/other-kevin.png",
-    name: "emilio", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/vykle.jpg",
-    name: "vy", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/Emilio.png",
-    name: "kevinZ", // Use the key for translation
-  },
-];
-
-const newTeamMembers = [
-  {
-    imgSrc: "/images/ethan.png",
-    name: "ethan", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/anon.png",
-    name: "yash", // Use the key for translation
-  },
-  {
-    imgSrc: "/images/Joshua-V.png",
-    name: "joshua", // Use the key for translation
-  },
+  // Current Team
+  { imgSrc: "/images/nick-portrait.png", name: "nick", link: "https://krzysiaknick.github.io/" },
+  { imgSrc: "/images/irving-portrait.png", name: "irving", link: "https://irvingfsanchez.github.io/IrvingFSanchez-Professional-Website/" },
+  { imgSrc: "/images/jaiden-portrait.png", name: "jaiden", link: "https://jtleon301.github.io/" },
+  { imgSrc: "/images/bryan-portrait.png", name: "bryan", link: "https://bryana55.github.io/" },
+  
+  // The Dev Den
+  { imgSrc: "/images/ethan.png", name: "ethan", link: "#" },
+  { imgSrc: "/images/anon.png", name: "yash", link: "#" },
+  { imgSrc: "/images/Joshua-V.png", name: "joshua", link: "#" },
+  
+  // Previous Members
+  { imgSrc: "/images/josh.png", name: "josh", link: "#" },
+  { imgSrc: "/images/kevin.png", name: "kevin", link: "#" },
+  { imgSrc: "/images/logan.png", name: "logan", link: "#" },
+  { imgSrc: "/images/olivia-1.png", name: "olivia", link: "#" },
+  { imgSrc: "/images/Emilio.png", name: "emilio", link: "#" },
+  { imgSrc: "/images/vykle.jpg", name: "vy", link: "#" },
+  { imgSrc: "/images/other-kevin.png", name: "kevinZ", link: "#" }
 ];
 
 const About = () => {
-  const { t, i18n } = useTranslation(); // Use the translation hook and i18n instance
+  const { t, i18n } = useTranslation();
 
-  // Function to switch language
+  // Memoize to prevent unnecessary re-renders
+  const teamMembersCarousel = React.useMemo(() => 
+    currentTeamMembers.map(member => ({
+      ...member,
+      name: t(`team.members.${member.name}.name`),
+      role: t(`team.members.${member.name}.description`)
+    })),
+  [t]); // Re-run when translations change
+
   const switchLanguage = (lang) => {
     i18n.changeLanguage(lang);
   };
 
   return (
     <div className="about-page">
-      {/* Language toggle buttons (similar to Header.jsx) */}
-      <div
-        style={{
-          position: "absolute",
-          top: "1rem",
-          right: "1rem",
-          zIndex: 1000, // Ensure buttons are above other content
-        }}
-      >
+      {/* Language toggle - move styles to CSS */}
+      <div className="language-toggle">
         <button 
           onClick={() => switchLanguage('en')}
-          style={{ marginRight: "0.5rem" }}
+          className="language-button english"
         >
           English
         </button>
-        <button onClick={() => switchLanguage('es')}>Español</button>
+        <button 
+          onClick={() => switchLanguage('es')}
+          className="language-button spanish"
+        >
+          Español
+        </button>
       </div>
 
       <div className="about-container">
-        {/* About Section */}
         <div className="about-text-container">
           <h1 className="about-title">{t('about.title')}</h1>
           <p className="about-description">
             {t('about.description')}
           </p>
 
-          <h2 className="about-subtitle">{t('about.howToUse')}</h2>
+          {/* Section grouping for better semantics */}
+          <section aria-labelledby="how-to-use">
+            <h2 className="about-subtitle" id="how-to-use">
+              {t('about.howToUse')}
+            </h2>
+          </section>
 
-          <h2 className="about-subtitle">{t('about.professors')}</h2>
-          <p className="about-description">
-            {t('about.professorsDesc1')}
-          </p>
-          <p className="about-description">
-            {t('about.professorsDesc2')}
-          </p>
+          <section aria-labelledby="professors-section">
+            <h2 className="about-subtitle" id="professors-section">
+              {t('about.professors')}
+            </h2>
+            <p className="about-description">
+              {t('about.professorsDesc1')}
+            </p>
+            <p className="about-description">
+              {t('about.professorsDesc2')}
+            </p>
+          </section>
 
-          <h2 className="about-subtitle">{t('about.students')}</h2>
-          <p className="about-description">
-            {t('about.studentsDesc')}
-          </p>  
-        </div>
-      </div>
-      
-      {/* Capstone Team Section */}
-      <div className="about-team">
-        <h2 className="about-subtitle">{t('about.meetOurTeam')}</h2>
-        <h2 className="about-subtitle">{t('about.chairForceOne')}</h2>
-
-        <div className="team-boxes">
-          {currentTeamMembers.map((member, index) => (
-            <div key={index} className="team-box">
-              <img src={member.imgSrc} alt={member.name} />
-              <h3>{t(`team.members.${member.name}.name`)}</h3>
-              <p>{t(`team.members.${member.name}.description`)}</p>
-            </div>
-          ))}
+          <section aria-labelledby="students-section">
+            <h2 className="about-subtitle" id="students-section">
+              {t('about.students')}
+            </h2>
+            <p className="about-description">
+              {t('about.studentsDesc')}
+            </p>
+          </section>
         </div>
       </div>
 
-      {/* 2024 Fall Capstone Team Section */}
-      <div className="about-team">
-        <h2 className="about-subtitle">{t('about.theKrabbyPatties')}</h2>
-        <div className="team-boxes">
-          {previousTeamMembers.map((member, index) => (
-            <div key={index} className="team-box">
-              <img src={member.imgSrc} alt={member.name} />
-              <h3>{t(`team.members.${member.name}.name`)}</h3>
-              <p>{t(`team.members.${member.name}.description`)}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 2025 Software Engineering Team */}
-      <div className="about-team">
-        <h2 className="about-subtitle">{t('about.theDevDen')}</h2>
-        <div className="team-boxes">
-          {newTeamMembers.map((member, index) => (
-            <div key={index} className="team-box">
-              <img src={member.imgSrc} alt={member.name} />
-              <h3>{t(`team.members.${member.name}.name`)}</h3>
-              <p>{t(`team.members.${member.name}.description`)}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Team Section - Add aria label */}
+      <section 
+        className="about-team"
+        aria-label="Team members carousel"
+      >
+        <h2 className="about-subtitle">
+          {t('about.meetOurTeam')}
+        </h2>
+        <TeamCarousel 
+          teamMembers={teamMembersCarousel}
+          key={i18n.language} // Force re-render on language change
+        />
+      </section>
     </div>
   );
 };

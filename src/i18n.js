@@ -79,7 +79,7 @@ const resources = {
 
                     "ethan": {
                         "name": "Ethan Cala",
-                        "description": "Ethan is a senior pursing a major in computer science, who is passionate about creating innovative solutions and constantly learning new technologies. Specializing in web development, IT engineering, and software engineering."
+                        "description": "Ethan is a senior pursuing a major in Computer Science, who is passionate about creating innovative solutions and constantly learning new technologies. Specializing in web development, IT engineering, and software engineering."
                     },
                     "yash": {
                         "name": "Yeswanth Sai Edhala",
@@ -93,7 +93,7 @@ const resources = {
                     // Current Team Members
                     "irving": {
                         "name": "Irving Sanchez",
-                        "description": "Irving is a senior pursuing a major in computer science with a minor in math and thereafter pursuing his masters in computer engineering. On his free time he enjoys playing with his dogs Groot and Peter, reading comic books, and invites anyone to play a game of chess or Magic: The Gathering with him."
+                        "description": "Irving is a Computer Science Major with a minor in Mathematics. Pursuing Master's in Computer Engineering"
                     },
                     "nick": {
                         "name": "Nick Krzysiak",
@@ -101,11 +101,11 @@ const resources = {
                     },
                     "jaiden": {
                         "name": "Jaiden Leonard",
-                        "description": "Jaiden is a senior majoring in computer science with a focus on software engineering and development. He enjoys playing videogames and working on cars."
+                        "description": "Jaiden is a senior majoring in computer science with a focus on software engineering and development."
                     },
                     "bryan": {
                         "name": "Bryan Avalos",
-                        "description": "Bryan is a senior pursuing a double major in computer science and forensic criminal investigation. In his free time, he enjoys watching baseball, working on cars, playing videogames, and learning about technology."
+                        "description": "Bryan is a senior pursuing a double major in computer science and forensic criminal investigation."
                     },
 
                     // Previous Team Members
@@ -309,7 +309,7 @@ const resources = {
                 "meetOurTeam": "Conoce a Nuestro Equipo",
                 "chairForceOne": "ChairForceOne",
                 "theKrabbyPatties": "TheKrabbyPatties",
-                "theDevDen": "TheDevDen (Próximamente)"
+                "theDevDen": "TheDevDen"
             }
         }
     }
