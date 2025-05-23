@@ -30,7 +30,7 @@ A team of senior Computer Science students from **Lewis University**:
 | Nick Krzysiak    | Scrum Master        | Coordinated sprints, merged features, organized backlog |
 | Jaiden Leonard   | Developer           | Focused on backend structure and integration |
 | Bryan Avalos     | Developer           | Contributed to component styling and implementation |
-
+| Ethan Cala       | DevOps Engineer     | Built out scalable architecture and IoC solutions |
 ---
 
 ## 🛠️ Tech Stack
