@@ -38,7 +38,7 @@ A team of senior Computer Science students from **Lewis University**:
 ### Core Technologies
 - **Frontend:** React.js, Vite, JavaScript, HTML5, CSS3
 - **Styling:** TailwindCSS (primary), Bootstrap (legacy)
-- **Deployment:** Azure Static Web Apps
+- **Deployment:** Azure Static Web Apps, GCP
 - **Storage:** Firebase (PDF storage)
 - **Version Control:** Git + GitHub
 
